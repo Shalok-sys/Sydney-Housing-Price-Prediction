@@ -3,7 +3,11 @@
 const form = document.getElementById("predict_form");
 const submitButton = document.getElementById("submit_button");
 const propertyType = document.getElementById("property_type");
-const landInput = document.getElementById("land_size_sqm");
+const areaLabel = document.getElementById("area_label");
+const areaHint = document.getElementById("area_hint");
+const warningEl = document.getElementById("result_warning");
+
+const HOUSE_LIKE = ["House", "Townhouse", "Villa"];
 
 const states = {
   empty: document.getElementById("state_empty"),
@@ -22,19 +26,18 @@ function formatMoney(value) {
   return "$" + Math.round(value).toLocaleString("en-AU");
 }
 
-// Units have no land of their own, so switch that input off
-function syncLandInput() {
-  const isUnit = propertyType.value === "Unit";
-  landInput.disabled = isUnit;
-  if (isUnit) {
-    landInput.value = "";
-  } else if (landInput.value === "") {
-    landInput.value = "450";
-  }
+// The sites report land area for a house and floor area for a flat, so
+// the label follows whichever type is selected
+function syncAreaLabel() {
+  const isHouseLike = HOUSE_LIKE.includes(propertyType.value);
+  areaLabel.textContent = isHouseLike ? "Land size" : "Floor area";
+  areaHint.textContent = isHouseLike
+    ? "Square metres of land. Optional, often not listed."
+    : "Square metres of internal floor area. Optional, often not listed.";
 }
 
-propertyType.addEventListener("change", syncLandInput);
-syncLandInput();
+propertyType.addEventListener("change", syncAreaLabel);
+syncAreaLabel();
 
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
@@ -42,19 +45,11 @@ form.addEventListener("submit", async function (event) {
   const payload = {
     suburb: document.getElementById("suburb").value,
     property_type: propertyType.value,
+    sale_method: document.getElementById("sale_method").value,
     bedrooms: document.getElementById("bedrooms").value,
     bathrooms: document.getElementById("bathrooms").value,
     parking_spaces: document.getElementById("parking_spaces").value,
-    land_size_sqm: landInput.value,
-    floor_area_sqm: document.getElementById("floor_area_sqm").value,
-    distance_to_cbd_km: document.getElementById("distance_to_cbd_km").value,
-    distance_to_station_km: document.getElementById("distance_to_station_km").value,
-    distance_to_school_km: document.getElementById("distance_to_school_km").value,
-    year_built: document.getElementById("year_built").value,
-    days_on_market: document.getElementById("days_on_market").value,
-    renovated: document.getElementById("renovated").checked,
-    has_pool: document.getElementById("has_pool").checked,
-    agent_description: document.getElementById("agent_description").value,
+    area_sqm: document.getElementById("area_sqm").value,
   };
 
   submitButton.disabled = true;
@@ -82,7 +77,11 @@ form.addEventListener("submit", async function (event) {
     document.getElementById("result_accuracy").textContent =
       "In " + data.suburb + " this model is typically within " +
       data.error_pct.toFixed(1) + " percent of the sale price, measured by " +
-      "cross validation on the training data.";
+      "cross validation on sales it had not seen.";
+
+    warningEl.textContent = data.warning || "";
+    warningEl.classList.toggle("is_hidden", !data.warning);
+
     showState("result");
   } catch (error) {
     document.getElementById("error_message").textContent =

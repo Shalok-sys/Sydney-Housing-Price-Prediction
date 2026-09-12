@@ -228,8 +228,10 @@ def parse_inbox(text):
     if not lines:
         return []
 
-    # Drop a header line if the extension included one
-    if lines[0].lower().replace(" ", "").startswith("listing_url,"):
+    # Drop a header line if the extension included one. The header may
+    # arrive quoted, so the quotes come off before the check.
+    first = lines[0].lower().replace(" ", "").replace('"', "").replace("'", "")
+    if first.startswith("listing_url,"):
         lines = lines[1:]
 
     parsed = []

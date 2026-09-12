@@ -5,19 +5,12 @@
     "parking_spaces",
     "land_size_sqm",
     "floor_area_sqm",
-    "distance_to_cbd_km",
-    "distance_to_station_km",
-    "distance_to_school_km",
-    "property_age",
-    "renovated",
-    "has_pool",
-    "days_on_market",
-    "description_length",
-    "mentions_view"
+    "bath_per_bed"
   ],
   "categorical_features": [
     "suburb",
-    "property_type"
+    "property_type",
+    "sale_method"
   ],
   "suburb_options": [
     "Liverpool",
@@ -25,15 +18,59 @@
     "Parramatta"
   ],
   "property_type_options": [
+    "Apartment",
     "House",
     "Townhouse",
-    "Unit"
+    "Unit",
+    "Villa"
   ],
-  "current_year": 2026,
+  "sale_method_options": [
+    "Auction",
+    "Private treaty",
+    "Unknown"
+  ],
   "suburb_typical_error_pct": {
-    "Liverpool": 13.8,
-    "Mosman": 14.0,
-    "Parramatta": 10.6
+    "Liverpool": 8.2,
+    "Mosman": 21.2,
+    "Parramatta": 9.7
   },
-  "overall_typical_error_pct": 13.1
+  "overall_typical_error_pct": 11.4,
+  "observed_combinations": [
+    "Liverpool|Apartment",
+    "Liverpool|House",
+    "Liverpool|Townhouse",
+    "Liverpool|Unit",
+    "Mosman|Apartment",
+    "Mosman|House",
+    "Mosman|Townhouse",
+    "Mosman|Unit",
+    "Parramatta|Apartment",
+    "Parramatta|Townhouse",
+    "Parramatta|Unit",
+    "Parramatta|Villa"
+  ],
+  "thin_support": [
+    {
+      "suburb": "Mosman",
+      "property_type": "Townhouse",
+      "count": 1
+    },
+    {
+      "suburb": "Mosman",
+      "property_type": "Unit",
+      "count": 3
+    },
+    {
+      "suburb": "Parramatta",
+      "property_type": "Townhouse",
+      "count": 2
+    },
+    {
+      "suburb": "Parramatta",
+      "property_type": "Villa",
+      "count": 1
+    }
+  ],
+  "training_rows": 228,
+  "target_is_log": true
 }

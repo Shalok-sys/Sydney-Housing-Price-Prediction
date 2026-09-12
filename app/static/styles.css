@@ -10,6 +10,9 @@
   --accent_text: #ffffff;
   --accent_soft: #e7f0ea;
   --danger: #9a2b20;
+  --warning_bg: #fdf4e3;
+  --warning_border: #e6d3a8;
+  --warning_text: #6b4d12;
 
   /* Radius rule, inputs and buttons 8px, panels 14px */
   --radius_control: 8px;
@@ -33,6 +36,9 @@
     --accent_text: #0f1a14;
     --accent_soft: #1b3428;
     --danger: #e28b7f;
+  --warning_bg: #2e2617;
+  --warning_border: #4d4026;
+  --warning_text: #e8cf9a;
   }
 }
 
@@ -250,6 +256,16 @@ input:disabled {
   background: var(--accent_soft);
   color: var(--text);
   font-family: var(--font_mono);
+  font-size: 13px;
+}
+
+.result_warning {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: var(--radius_control);
+  border: 1px solid var(--warning_border);
+  background: var(--warning_bg);
+  color: var(--warning_text);
   font-size: 13px;
 }
 

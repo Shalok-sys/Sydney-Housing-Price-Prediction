@@ -16,65 +16,103 @@ def code(text):
     cells.append(nbf.v4.new_code_cell(text))
 
 
-# Title and overview
 md("""\
 # Sydney Housing Price Prediction and Decision Support System
 
 This notebook covers the full machine learning workflow for a housing
-price prediction tool built for a real estate agency. It follows the
-five parts of the task: problem definition and data collection, data
-understanding and feature engineering, model development and
-evaluation, investigating prediction failures, and final deployment.
+price prediction tool built for a real estate agency, using real sold
+listings collected from realestate.com.au and domain.com.au. It follows
+the five parts of the task: problem definition and data collection, data
+understanding and feature engineering, model development and evaluation,
+investigating prediction failures, and final deployment.
 
-Acknowledgement of GenAI use. This notebook was built with help from
-Claude, an AI coding assistant, for planning the structure and writing
-code and analysis. All choices, numbers and conclusions below come
-from running the code in this notebook. Before submission this work
-should be reviewed, understood and where needed extended in your own
-words, and the same acknowledgement should appear in the written
-report.""")
+Acknowledgement of GenAI use. Claude, an AI coding assistant, was used
+to help plan this project and write the code and analysis. Every number
+and conclusion below comes from running the code in this notebook on the
+collected data. The work should be reviewed and understood before
+submission, and this acknowledgement repeated in the written report.""")
 
 # Part 1
 md("""\
 ## Part 1: Problem Definition and Data Collection
 
 ### The problem
-The agency wants a tool that predicts the sale price of a Sydney
-property from its features, and that can explain when a prediction
-should be trusted and when it should not.
+The agency wants a tool that estimates the sale price of a Sydney
+property from its listed features, and that is honest about how much
+confidence a given estimate deserves.
 
 ### Suburb selection and motivation
 Three suburbs were chosen to represent different housing markets.
 
-* Mosman. A harbourside suburb close to the city with high land
-  values and mostly older, larger homes. Chosen as an example of a
-  premium, low supply market.
-* Parramatta. A middle ring suburb with a mix of houses and a large
-  number of newer apartments, and strong public transport. Chosen as
-  an example of a mixed density, transit focused market.
-* Liverpool. An outer growth corridor suburb with newer housing stock
-  and larger blocks of land relative to price. Chosen as an example of
-  a more affordable, family oriented market.
+* Mosman. A harbourside suburb close to the city, high land values,
+  older housing stock. Chosen as a premium, low supply market.
+* Parramatta. A middle ring centre with a large and growing apartment
+  market and strong transport. Chosen as a mixed density, transit
+  focused market.
+* Liverpool. An outer growth corridor suburb, newer stock, larger
+  blocks relative to price. Chosen as a more affordable market.
 
-These three markets differ in distance to the city, land value,
-building age and dwelling mix, so they should show clearly different
-price patterns and give the model a wider range of situations to
-learn from.
+The medians computed further down confirm these are substantially
+different markets, which is what the task asks for.
 
-### Note on how the data was collected
-The task asks for manually collected sold listings from a site such as
-realestate.com.au or domain.com.au. Automated scraping of those sites
-was not reliable in this environment because of bot protection and
-site terms of use, so a simulated dataset was generated instead. The
-generator in `scripts/generate_dataset.py` sets a sale price formula
-using public median price ranges for each suburb, then adds bedrooms,
-bathrooms, land size, floor area, distance to the city, property age
-and other features, plus random noise, a few missing values and a
-handful of unusual sales. The result behaves like a real sales dataset
-for the purpose of building and testing the pipeline in this project.
-Before final submission this dataset should be replaced or checked
-against real manually collected listings if the assessment requires
-genuine scraped data for full marks on the data collection criterion.""")
+### How the data was collected
+The listings were collected by hand from the sold sections of
+realestate.com.au and domain.com.au, using the Claude browser extension
+to read each results page and transcribe the visible fields into rows.
+Both sites named in the task sheet were used. No crawler was run against
+either site, since both prohibit automated scraping in their terms of
+use, and the task sheet asks for the dataset to be constructed manually.
+
+Every row carries the URL of the listing it came from and the date it
+was collected, so any figure in this analysis can be traced back to its
+source. Only fields the listing actually displayed were recorded. Where
+a listing did not publish a value the cell was left empty rather than
+estimated, which is why several columns below are incomplete.
+
+### From raw collection to the modelling table
+
+| Stage | Rows |
+|---|---|
+| Collected from both sites | 250 |
+| Same property found on both sites, removed | 15 |
+| Property type not a standard dwelling, removed | 4 |
+| Stored in the collected dataset | 231 |
+| Removed during cleaning, see below | 3 |
+| **Used for modelling** | **228** |
+
+The 15 cross site duplicates matter. Both sites list many of the same
+properties under different URLs, so the same sale appears twice unless
+addresses are compared. Left in, those sales would carry double weight
+and the same property would land in more than one cross validation
+fold, quietly flattering the results.
+
+Three further rows were removed as not comparable residential sales,
+reported by `scripts/prepare_features.py`. One Parramatta listing had no
+bedroom count. A Liverpool listing of 24 bedrooms and 14 bathrooms at
+3,100,000 dollars is a boarding house or development site. A second
+Liverpool listing of 12 bedrooms and 12 bathrooms at 4,200,000 dollars
+is an entire townhouse block sold as one lot. These are different kinds
+of transaction to a family home and would distort the model badly, since
+both were the top two Liverpool prices.
+
+### Dataset quality, challenges and limitations
+
+* **Apartments dominate.** 195 of 228 properties are apartments or
+  units, against 21 houses and 11 townhouses, and Parramatta returned no
+  house sales at all. This reflects what actually sold in these suburbs
+  over the collection window, since inner Sydney turnover is mostly
+  strata. It does mean the model learns apartment pricing well and house
+  pricing poorly, which is stated again in the deployment section.
+* **No description text.** The extension returned empty description and
+  feature fields for every row. The task sheet encourages using agent
+  descriptions as text data, and that was not possible here. Features
+  such as whether a property mentions a view, or has a pool, could not
+  be built.
+* **Area is sparsely reported**, and means different things for
+  different property types. This is dealt with in Part 2.
+* **A short window.** All sales fall in a 206 day period, so the model
+  describes one set of market conditions and should not be assumed to
+  hold across a rate cycle.""")
 
 code("""\
 # Load the packages used across the notebook
@@ -86,602 +124,652 @@ import seaborn as sns
 sns.set_style("whitegrid")
 pd.set_option("display.max_columns", 30)
 
-# Load the housing dataset
-df = pd.read_csv("../data/sydney_housing_sales.csv")
+# The modelling table, produced by scripts/prepare_features.py
+df = pd.read_csv("../data/processed/model_ready.csv")
+df["sale_date"] = pd.to_datetime(df["sale_date"])
+
 print("Rows and columns", df.shape)
-df.head()""")
-
-md("""\
-### Dataset quality, challenges and limitations
-
-* The dataset has 120 properties, 40 from each suburb, which meets the
-  minimum size requested for this task.
-* Missing values were placed in floor area, parking spaces and
-  bathrooms. This mirrors real listings where some details are not
-  always published.
-* Six unusual sales were added on purpose, three sold well under the
-  general pattern and three sold well above it, so later error
-  analysis has genuine cases to investigate.
-* Because the data is simulated it cannot capture true buyer
-  behaviour, negotiation, auction competition or local planning
-  rules. It also has no real time trend, since the price formula does
-  not depend on the sale date.
-* Formula based data can under represent rare property types and may
-  carry the biases of the assumptions used to build it. This is a key
-  limitation to state clearly in the final report.""")
+print()
+print("Properties per suburb")
+print(df["suburb"].value_counts().to_string())
+print()
+print("Properties per type")
+print(df["property_type"].value_counts().to_string())""")
 
 code("""\
-# Check column types and how many values are missing in each column
-df.info()
+# How complete is each column, and where does the data come from
+print("Share of rows where each column has a value")
+completeness = df.notna().mean().sort_values()
+print((completeness * 100).round(1).to_string())
 print()
-print("Missing values per column")
-print(df.isna().sum())""")
+
+source = df["listing_url"].str.extract(r"https?://(?:www\\.)?([^/]+)")[0]
+print("Listings per source site")
+print(source.value_counts().to_string())
+print()
+print("Sale dates run from", df["sale_date"].min().date(), "to", df["sale_date"].max().date())""")
 
 # Part 2
 md("""\
 ## Part 2: Data Understanding and Feature Engineering
 
-### Price distribution
-The next cells look at how sale price is spread across the whole
-dataset and across each suburb.""")
+### How prices are distributed
+Sydney prices are heavily right skewed, and these three suburbs together
+stretch that further, from a 300,000 dollar Liverpool unit to a
+23,000,000 dollar Mosman house. The next cell shows the distribution
+both as recorded and on a log scale.""")
 
 code("""\
-fig, axes = plt.subplots(1, 2, figsize=(12, 4))
+fig, axes = plt.subplots(1, 3, figsize=(16, 4))
 
-axes[0].hist(df["sale_price"], bins=25, color="#4C72B0")
-axes[0].set_title("Sale price, all suburbs")
-axes[0].set_xlabel("Sale price")
-axes[0].set_ylabel("Number of properties")
+axes[0].hist(df["sale_price"] / 1e6, bins=40, color="#4C72B0")
+axes[0].set_title("Sale price")
+axes[0].set_xlabel("Million dollars")
+axes[0].set_ylabel("Properties")
 
-sns.boxplot(data=df, x="suburb", y="sale_price", ax=axes[1])
-axes[1].set_title("Sale price by suburb")
-axes[1].set_xlabel("Suburb")
-axes[1].set_ylabel("Sale price")
+axes[1].hist(np.log(df["sale_price"]), bins=40, color="#55A868")
+axes[1].set_title("Log of sale price")
+axes[1].set_xlabel("Log dollars")
+
+sns.boxplot(data=df, x="suburb", y="sale_price", ax=axes[2])
+axes[2].set_yscale("log")
+axes[2].set_title("Price by suburb, log scale")
+axes[2].set_ylabel("Sale price")
 
 plt.tight_layout()
 plt.show()
 
 print("Median sale price by suburb")
-print(df.groupby("suburb")["sale_price"].median())""")
+print(df.groupby("suburb")["sale_price"].median().round(0).to_string())
+print()
+print("Skew of price", round(df["sale_price"].skew(), 2))
+print("Skew of log price", round(np.log(df["sale_price"]).skew(), 2))""")
 
 md("""\
-The overall price distribution is right skewed, most properties sit at
-the lower end with a long tail of expensive properties, which is
-typical for housing data. The suburb boxplot shows three clearly
-separated price levels. Liverpool has the lowest median at around
-616,000 dollars, Parramatta sits in the middle at around 1,013,000
-dollars, and Mosman is well above both at around 2,230,000 dollars
-with the widest spread. This confirms the three suburbs represent
-substantially different markets, which was the goal of the suburb
-selection in Part 1.""")
+The raw distribution has a skew of about 4.6, driven by a small number
+of very expensive Mosman sales. Taking logs brings that down to about
+0.6, close to symmetric. This matters for modelling and is returned to
+in Part 3.
+
+The suburb medians confirm three distinct markets. Mosman sits far above
+the others, Parramatta in the middle and Liverpool lowest. Note the
+boxplot uses a log scale, because on a linear scale the Liverpool and
+Parramatta boxes are flattened to almost nothing by the Mosman range.""")
 
 code("""\
-# Look at property type mix and price across time
-df["sale_date"] = pd.to_datetime(df["sale_date"])
-df["sale_month"] = df["sale_date"].dt.to_period("M")
+# Price by suburb and property type, with counts so thin cells are visible
+median_table = df.pivot_table(index="suburb", columns="property_type",
+                              values="sale_price", aggfunc="median")
+count_table = df.pivot_table(index="suburb", columns="property_type",
+                             values="sale_price", aggfunc="count")
 
-monthly_price = df.groupby("sale_month")["sale_price"].mean()
-
-plt.figure(figsize=(10, 4))
-monthly_price.plot(marker="o")
-plt.title("Average sale price by month")
-plt.xlabel("Month")
-plt.ylabel("Average sale price")
-plt.tight_layout()
-plt.show()""")
+print("Median price")
+print(median_table.round(0).fillna(0).astype(int).to_string())
+print()
+print("Number of properties")
+print(count_table.fillna(0).astype(int).to_string())""")
 
 md("""\
-There is no clear upward or downward trend over time in this chart.
-This is expected here because the simulated price formula does not
-include a time component. A real sold listings dataset would likely
-show some trend linked to interest rates and market conditions over
-the sale period, and that is a difference to be aware of between this
-prototype dataset and a genuine one.""")
+This table is the clearest statement of the dataset's main weakness.
+Parramatta has no houses at all, Mosman has a single townhouse, and
+several other cells rest on a handful of sales. Any figure the model
+produces for those combinations is an extrapolation rather than
+something learned from comparable sales.""")
 
 md("""\
-### Outlier detection
-The interquartile range method is used within each suburb, since a
-price that looks like an outlier in Liverpool would be a normal price
-in Mosman.""")
+### The area column means two different things
+
+Both sites report an area figure, but it is land area for a house and
+internal floor area for an apartment. Both arrived in the same column
+during collection. Left as one feature the model would read the gap
+between roughly 600 and roughly 100 as a land size effect, when it is
+really the difference between a house and a flat.
+
+`scripts/prepare_features.py` splits the column in two by property type,
+so `land_size_sqm` only describes houses, townhouses and villas, and
+`floor_area_sqm` only describes apartments and units. One apartment
+reporting 1055 square metres was blanked, since that is the whole
+block's parcel rather than the apartment.""")
 
 code("""\
-def flag_outliers(group):
-    q1 = group["sale_price"].quantile(0.25)
-    q3 = group["sale_price"].quantile(0.75)
-    iqr = q3 - q1
-    lower = q1 - 1.5 * iqr
-    upper = q3 + 1.5 * iqr
-    return (group["sale_price"] < lower) | (group["sale_price"] > upper)
-
-df["is_outlier"] = df.groupby("suburb", group_keys=False).apply(flag_outliers)
-outliers = df[df["is_outlier"]][
-    ["property_id", "suburb", "property_type", "sale_price", "agent_description"]
-]
-print(f"Found {len(outliers)} outliers using the suburb level IQR rule")
-outliers""")
+print("Area coverage after the split")
+print(df.groupby("property_type")[["land_size_sqm", "floor_area_sqm"]]
+        .agg(["count", "median"]).to_string())
+print()
+both_set = df["land_size_sqm"].notna() & df["floor_area_sqm"].notna()
+print("Rows where both are set, should be zero:", int(both_set.sum()))""")
 
 md("""\
-The properties flagged here line up closely with the unusual sales
-added on purpose in Part 1, the deceased estate style sales priced
-well below the suburb norm, and the rare feature sales, such as a
-property with unobstructed water views, priced well above it. This is
-a good sign that the outlier rule is picking up genuine unusual cases
-rather than noise.""")
+### A trend that turned out to be a collection artifact
+
+The sale date looked useful at first. Across the whole dataset, days
+since the first sale correlates with price at about negative 0.40, which
+would suggest prices fell sharply over seven months. The next cell tests
+that before trusting it.""")
+
+code("""\
+earliest = df["sale_date"].min()
+df["days_since_first_sale"] = (df["sale_date"] - earliest).dt.days
+
+print("Correlation of days since first sale with price")
+print("  across the whole dataset  ",
+      round(df["days_since_first_sale"].corr(df["sale_price"]), 3))
+print()
+print("  within each suburb")
+for suburb, group in df.groupby("suburb"):
+    r = group["days_since_first_sale"].corr(group["sale_price"])
+    print(f"    {suburb:<12} {r:+.3f}   (n={len(group)})")
+print()
+print("When each suburb's sales were collected")
+print(df.groupby("suburb")["days_since_first_sale"].agg(["min", "max", "mean"]).round(1).to_string())""")
 
 md("""\
+The apparent trend is an artifact of how the data was collected, not a
+property of the market. Mosman sales span the full 206 day window, while
+Liverpool and Parramatta sales only cover the most recent third of it.
+Mosman is also the expensive suburb, so an early sale date is standing
+in for "this is a Mosman property" rather than for "prices were higher
+back then". Once the comparison is made within a suburb the correlation
+collapses towards zero.
+
+Sale date is therefore excluded from the model. It describes the
+collection process rather than the housing market, so any pattern the
+model learned from it would not carry to new properties. Part 3 also
+checks what the feature actually does to the score.
+
 ### Three variables expected to matter most
 
-Before creating any engineered features or looking at model results,
-the three variables expected to have the strongest influence on price
+Before engineering anything further, the three expected to matter most
 are:
 
-1. Distance to the CBD. Sydney property prices generally fall as
-   distance from the city and harbour increases, and this also acts
-   as a stand in for suburb identity in this dataset.
-2. Land size. For houses and townhouses, land is usually the largest
-   single driver of value in Sydney, more so than the building itself.
-3. Floor area and property type. Floor area should matter most for
-   units, where there is no land component, and property type
-   captures the general difference between houses, townhouses and
-   units.
+1. **Suburb.** The medians above differ by more than a factor of four,
+   which is a far larger gap than anything separating properties inside
+   a single suburb.
+2. **Property type.** Whether a dwelling is a house or a flat separates
+   the market again within each suburb, and it also determines which
+   area measurement exists at all.
+3. **Bedrooms.** The simplest available measure of size, and the only
+   size feature recorded for nearly every property, given how sparse the
+   area columns are.
 
-This reasoning follows general knowledge of the Sydney property market
-and also reflects how the simulated dataset was built, since the price
-formula in `scripts/generate_dataset.py` uses these variables directly.""")
+Distance to the city is deliberately not on this list. It was recorded
+in the suburb configuration, but it only takes three values, one per
+suburb, so it carries exactly the same information as the suburb label
+and adds nothing.""")
 
 code("""\
-numeric_cols = [
-    "bedrooms", "bathrooms", "parking_spaces", "land_size_sqm",
-    "floor_area_sqm", "distance_to_cbd_km", "distance_to_station_km",
-    "distance_to_school_km", "days_on_market", "renovated", "has_pool",
-    "sale_price",
+numeric_candidates = [
+    "bedrooms", "bathrooms", "parking_spaces",
+    "land_size_sqm", "floor_area_sqm",
 ]
-correlations = df[numeric_cols].corr()["sale_price"].drop("sale_price")
-correlations = correlations.sort_values()
+correlations = df[numeric_candidates + ["sale_price"]].corr()["sale_price"]
+correlations = correlations.drop("sale_price").sort_values()
 
-plt.figure(figsize=(7, 5))
+plt.figure(figsize=(7, 4))
 correlations.plot(kind="barh", color="#55A868")
 plt.title("Correlation of each numeric feature with sale price")
 plt.xlabel("Correlation")
 plt.tight_layout()
 plt.show()
 
-correlations.sort_values(ascending=False)""")
+print(correlations.sort_values(ascending=False).round(3).to_string())
+print()
+print("Variation in price explained by suburb alone")
+print(df.groupby("suburb")["sale_price"].median().round(0).to_string())""")
 
 md("""\
-The correlation chart supports the hypothesis from above. Land size
-has the strongest positive correlation with price, close to 0.63, and
-distance to the CBD has the strongest negative correlation, close to
-negative 0.62, meaning price falls as distance grows. Floor area is
-also strongly positive, close to 0.55. One result that was not part of
-the original hypothesis is property age, which also shows a fairly
-strong positive correlation. This is most likely a suburb effect
-rather than a real aging effect, since Mosman has the oldest housing
-stock and also the highest prices, so age is partly standing in for
-suburb here. This is a useful reminder that a raw correlation can mix
-together more than one underlying cause.""")
+Bedrooms, bathrooms and parking all correlate with price at around 0.5,
+and land size at about 0.53 on the small number of houses that report
+it. Floor area is weaker at about 0.31, which is expected given it only
+describes apartments, a group with a much narrower price range than the
+dataset as a whole.
 
-md("""\
+These correlations are all weaker than the suburb effect visible in the
+medians. That supports the ranking above, with location first and the
+property's own attributes second.
+
 ### Feature engineering
-Three extra features are created before modelling.
 
-* Property age, the current year minus year built, turns a date style
-  column into a simple number the models can use directly.
-* Description length, the number of characters in the agent
-  description, is a simple text derived feature. Longer descriptions
-  may signal a more actively marketed or more distinctive property.
-* Mentions view, a flag set to one if the word view appears in the
-  agent description. This is a simple way to pull a signal out of free
-  text that is not available anywhere in the structured columns, and
-  is expected to help explain some of the high priced outliers seen
-  above.
+Given what the listings actually provide, the engineered features are
+modest, and deliberately so.
 
-These engineered features mostly extend rather than contradict the
-hypothesis above, property age and description length are additional
-signals sitting alongside the three core drivers already identified.""")
+* `land_size_sqm` and `floor_area_sqm`, the split described above. This
+  is the most important step, since it stops one column meaning two
+  things.
+* `bath_per_bed`, bathrooms divided by bedrooms, a rough signal of
+  fitout quality that is independent of raw size.
+
+Several features from an earlier version of this project could not be
+built, because the collected listings carry no description text, no
+build year and no feature tags. Whether a property has a pool, has been
+renovated, mentions a view, or how old it is, are all unavailable.""")
 
 code("""\
-current_year = 2026
-df["property_age"] = current_year - df["year_built"]
-df["description_length"] = df["agent_description"].str.len()
-df["mentions_view"] = df["agent_description"].str.contains("view", case=False).astype(int)
-
-df[["property_id", "year_built", "property_age", "description_length", "mentions_view"]].head()""")
+df["bath_per_bed"] = (df["bathrooms"] / df["bedrooms"]).replace([np.inf, -np.inf], np.nan)
+print(df[["bedrooms", "bathrooms", "bath_per_bed"]].describe().round(2).to_string())""")
 
 # Part 3
 md("""\
 ## Part 3: Model Development and Evaluation
 
 ### Model choice, before any training
-Three models are used, each representing a different modelling style.
+Three models are used, each a different approach.
 
-* Ridge linear regression. A simple, easy to explain baseline. It
-  assumes a straight line relationship between each feature and
-  price. Expected to be the weakest of the three, since price likely
-  depends on interactions between features, for example land size
-  matters differently in each suburb, and a plain linear model cannot
-  capture that on its own.
-* Random forest. An ensemble of many decision trees trained on
-  random subsets of the data. Can capture nonlinear relationships and
-  feature interactions, and tends to be fairly robust to the unusual
-  sales added to this dataset. Expected to perform clearly better than
-  linear regression.
-* Gradient boosting. Another tree ensemble, but trees are added one
-  at a time to correct the errors of the previous trees. Usually the
-  most accurate of standard regression methods on structured data like
-  this, but with a higher chance of overfitting, especially on a
-  dataset with only 120 rows.
+* **Ridge linear regression.** A simple, interpretable baseline
+  assuming each feature shifts price by a fixed amount. Expected to be
+  the weakest, since housing prices are usually multiplicative, a fourth
+  bedroom is worth far more in Mosman than in Liverpool.
+* **Random forest.** Many decision trees over random subsets. Captures
+  interactions between suburb, type and size without being told to look
+  for them, and tolerates the missing area values well.
+* **Gradient boosting.** Trees added in sequence, each correcting the
+  last. Usually the most accurate on structured data, with more
+  overfitting risk on a dataset this small.
 
-Expectation before training. Gradient boosting is expected to score
-best on raw accuracy, random forest a close second and the more
-stable choice, and linear regression is expected to score clearly
-lower because of the nonlinear, suburb dependent pricing pattern.""")
+Expectation before training: the two tree models should clearly beat
+linear regression, with gradient boosting narrowly ahead of random
+forest.
+
+### One decision before any of them, what to predict
+Because price is so skewed, the models predict the log of the price
+rather than the price, and the prediction is converted back to dollars
+for reporting. The next cell tests that this is the right call rather
+than assuming it.""")
 
 code("""\
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import Ridge
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-from sklearn.model_selection import KFold, cross_validate, train_test_split
+from sklearn.model_selection import KFold, cross_val_predict, cross_validate
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.metrics import mean_absolute_error, r2_score
 
-# List the columns that go into the model
 numeric_features = [
-    "bedrooms", "bathrooms", "parking_spaces", "land_size_sqm",
-    "floor_area_sqm", "distance_to_cbd_km", "distance_to_station_km",
-    "distance_to_school_km", "property_age", "renovated", "has_pool",
-    "days_on_market", "description_length", "mentions_view",
+    "bedrooms", "bathrooms", "parking_spaces",
+    "land_size_sqm", "floor_area_sqm", "bath_per_bed",
 ]
-categorical_features = ["suburb", "property_type"]
+categorical_features = ["suburb", "property_type", "sale_method"]
 
 X = df[numeric_features + categorical_features]
 y = df["sale_price"]
+y_log = np.log(y)
 
-# Fill missing numbers with the median, fill missing categories with
-# the most common value, then one hot encode the categories
-numeric_pipeline = Pipeline([("impute", SimpleImputer(strategy="median"))])
-categorical_pipeline = Pipeline([
-    ("impute", SimpleImputer(strategy="most_frequent")),
-    ("encode", OneHotEncoder(handle_unknown="ignore")),
-])
+# Fill missing numbers with the median, missing categories with the most
+# common value, then one hot encode the categories
 preprocess = ColumnTransformer([
-    ("num", numeric_pipeline, numeric_features),
-    ("cat", categorical_pipeline, categorical_features),
+    ("num", Pipeline([("impute", SimpleImputer(strategy="median"))]), numeric_features),
+    ("cat", Pipeline([
+        ("impute", SimpleImputer(strategy="most_frequent")),
+        ("encode", OneHotEncoder(handle_unknown="ignore")),
+    ]), categorical_features),
 ])
 
-models = {
-    "Linear Regression": Pipeline([
-        ("prep", preprocess),
-        ("scale", StandardScaler(with_mean=False)),
-        ("model", Ridge(alpha=1.0)),
-    ]),
-    "Random Forest": Pipeline([
-        ("prep", preprocess),
-        ("model", RandomForestRegressor(n_estimators=300, random_state=42)),
-    ]),
-    "Gradient Boosting": Pipeline([
-        ("prep", preprocess),
-        ("model", GradientBoostingRegressor(random_state=42)),
-    ]),
-}
+def build_models():
+    return {
+        "Linear Regression": Pipeline([
+            ("prep", preprocess),
+            ("scale", StandardScaler(with_mean=False)),
+            ("model", Ridge(alpha=1.0)),
+        ]),
+        "Random Forest": Pipeline([
+            ("prep", preprocess),
+            ("model", RandomForestRegressor(n_estimators=400, random_state=42)),
+        ]),
+        "Gradient Boosting": Pipeline([
+            ("prep", preprocess),
+            ("model", GradientBoostingRegressor(random_state=42)),
+        ]),
+    }
 
-print("Models ready", list(models.keys()))""")
-
-md("""\
-### Training and evaluation with k fold cross validation
-Five fold cross validation is used, so every property gets used for
-testing exactly once, and the results are less dependent on any single
-train test split.""")
-
-code("""\
 kf = KFold(n_splits=5, shuffle=True, random_state=42)
-scoring = {
-    "rmse": "neg_root_mean_squared_error",
-    "mae": "neg_mean_absolute_error",
-    "r2": "r2",
-}
 
-cv_summary = []
-for name, pipe in models.items():
-    result = cross_validate(pipe, X, y, cv=kf, scoring=scoring, return_train_score=True)
-    cv_summary.append({
+# Compare predicting price directly against predicting log price.
+# Both are scored in dollars so the comparison is fair.
+rows = []
+for name, pipe in build_models().items():
+    raw_pred = cross_val_predict(pipe, X, y, cv=kf)
+    log_pred = np.exp(cross_val_predict(pipe, X, y_log, cv=kf))
+    rows.append({
         "model": name,
-        "cv_test_rmse": -result["test_rmse"].mean(),
-        "cv_test_mae": -result["test_mae"].mean(),
-        "cv_test_r2": result["test_r2"].mean(),
-        "cv_train_r2": result["train_r2"].mean(),
+        "raw target r2": r2_score(y, raw_pred),
+        "raw target median error pct": (np.abs(y - raw_pred) / y * 100).median(),
+        "log target r2": r2_score(y, log_pred),
+        "log target median error pct": (np.abs(y - log_pred) / y * 100).median(),
     })
 
-cv_summary = pd.DataFrame(cv_summary).set_index("model")
-cv_summary["train_test_r2_gap"] = cv_summary["cv_train_r2"] - cv_summary["cv_test_r2"]
-cv_summary.round(3)""")
+pd.DataFrame(rows).set_index("model").round(3)""")
 
 md("""\
-### Reading the cross validation results
+Predicting the log is clearly better for every model, and it rescues
+gradient boosting entirely. Trained on raw dollars, gradient boosting
+scores an r2 of about 0.05, barely better than predicting the average
+price for everything. The reason is that squared error on raw prices is
+dominated by a handful of multi million dollar Mosman sales, so the
+model spends all of its capacity on those and fits the other 200
+properties poorly. On the log scale a 10 percent miss counts the same
+whether the property is worth 400,000 or 5,000,000 dollars, which is
+also the way an agent would think about it.
 
-Gradient boosting has the best cross validated test r2 at about 0.888,
-random forest is next at about 0.845, and linear regression is
-clearly behind at about 0.725. This matches the expectation set out
-above.
-
-Looking at the train score next to the test score shows the
-underfitting and overfitting picture more clearly. Linear regression
-has a train r2 of about 0.888 next to a test r2 of about 0.725, a gap
-of roughly 0.16, which points to underfitting, the straight line
-model is too simple to capture the real pattern in the data. Random
-forest has a train r2 of about 0.981 next to a test r2 of about 0.845,
-a gap of about 0.14. Gradient boosting fits the training data almost
-perfectly, train r2 about 0.999, next to a test r2 of about 0.888, a
-gap of about 0.11. A train score that close to a perfect fit is a
-classic overfitting signature, the model has essentially memorised the
-120 training rows. It still generalised the best of the three here,
-so the overfitting has not hurt performance on this dataset, but it is
-a real risk if the model were used on new suburbs, a larger dataset,
-or data that looks different from what it was trained on.""")
+All models below therefore predict log price.""")
 
 code("""\
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-holdout_summary = []
-fitted_models = {}
-for name, pipe in models.items():
-    pipe.fit(X_train, y_train)
-    fitted_models[name] = pipe
-    pred = pipe.predict(X_test)
-    holdout_summary.append({
+# Cross validation on the log target, with train scores to expose overfitting
+summary = []
+for name, pipe in build_models().items():
+    scored = cross_validate(pipe, X, y_log, cv=kf, scoring="r2", return_train_score=True)
+    dollar_pred = np.exp(cross_val_predict(pipe, X, y_log, cv=kf))
+    abs_pct_error = np.abs(y - dollar_pred) / y * 100
+    summary.append({
         "model": name,
-        "holdout_rmse": mean_squared_error(y_test, pred) ** 0.5,
-        "holdout_mae": mean_absolute_error(y_test, pred),
-        "holdout_r2": r2_score(y_test, pred),
+        "log r2 test": scored["test_score"].mean(),
+        "log r2 train": scored["train_score"].mean(),
+        "train test gap": scored["train_score"].mean() - scored["test_score"].mean(),
+        "dollar r2": r2_score(y, dollar_pred),
+        "dollar MAE": mean_absolute_error(y, dollar_pred),
+        "median error pct": abs_pct_error.median(),
     })
 
-holdout_summary = pd.DataFrame(holdout_summary).set_index("model")
-holdout_summary.round(3)""")
+summary = pd.DataFrame(summary).set_index("model")
+summary.round(3)""")
 
 md("""\
-### Revisiting the expectation and choosing a final model
+### Reading the results
 
-The holdout test set confirms the cross validation ranking. Gradient
-boosting scored the highest holdout r2 at about 0.96, random forest
-next at about 0.92, and linear regression lowest at about 0.88. This
-matches the expectation set before training that gradient boosting
-would perform best, random forest would be a strong second, and
-linear regression would be the weakest because it cannot represent
-the nonlinear, suburb dependent pricing pattern in this data.
+The expectation set before training was only partly right.
 
-Gradient boosting is recommended as the final model for this project.
-It gave the lowest error and the highest r2 on both cross validation
-and the holdout set. The main caution is the overfitting signature
-seen in its near perfect training score, so if more data becomes
-available the model should be retuned, for example by lowering the
-learning rate or limiting tree depth, and its performance should be
-rechecked before relying on it for real decisions.""")
+On the log scale the three models are almost indistinguishable, about
+0.869 for linear regression against 0.872 and 0.876 for the two tree
+models. The prediction that the tree models would clearly win does not
+hold. With only seven features and no text, there is not much non linear
+structure left for a tree to find that a linear model on log prices
+misses, since taking logs already turns the multiplicative behaviour of
+prices into something additive.
+
+The tree models do separate from linear regression on the dollar
+metrics, roughly 0.54 against 0.40 for r2 in dollars, and about 11 to 12
+percent against 14.5 percent median error. The difference is in the
+expensive properties. Dollar r2 weights a miss on a 5,000,000 dollar
+house far more heavily than one on a 500,000 dollar unit, and the tree
+models handle the top of the Mosman market better.
+
+On overfitting, linear regression has the smallest gap between its train
+and test scores, about 0.04, which is what a high bias model looks like.
+Both tree models sit near 0.09, fitting the training data noticeably
+better than the held out data. Neither gap is alarming, and the
+important point is that the extra flexibility buys very little here.
+Notice how different this is from a synthetic dataset, where a boosted
+model can look dramatically better, because in real data much of the
+variation is driven by things not in the table at all.
+
+Note also that the two r2 figures describe the same predictions. The log
+figure of about 0.88 is the flattering one, and the dollar figure of
+about 0.54 is the number that matters to somebody being handed a price.
+Quoting only the log score would overstate what the tool can do.""")
+
+code("""\
+# Does the sale date feature help, or is it just the collection artifact
+df_with_date = df.copy()
+with_date_numeric = numeric_features + ["days_since_first_sale"]
+
+preprocess_with_date = ColumnTransformer([
+    ("num", Pipeline([("impute", SimpleImputer(strategy="median"))]), with_date_numeric),
+    ("cat", Pipeline([
+        ("impute", SimpleImputer(strategy="most_frequent")),
+        ("encode", OneHotEncoder(handle_unknown="ignore")),
+    ]), categorical_features),
+])
+
+without = cross_validate(
+    Pipeline([("prep", preprocess), ("model", GradientBoostingRegressor(random_state=42))]),
+    X, y_log, cv=kf, scoring="r2")["test_score"].mean()
+
+with_date = cross_validate(
+    Pipeline([("prep", preprocess_with_date), ("model", GradientBoostingRegressor(random_state=42))]),
+    df_with_date[with_date_numeric + categorical_features], y_log, cv=kf, scoring="r2")["test_score"].mean()
+
+print(f"Gradient boosting log r2 without sale date  {without:.3f}")
+print(f"Gradient boosting log r2 with sale date     {with_date:.3f}")""")
+
+md("""\
+Worth being precise about this. The sale date does not inflate the
+score, it very slightly lowers it. So the reason for leaving it out is
+not that it was producing a falsely good result, it is that any signal
+it carries describes which suburb was collected when, and that would not
+transfer to a new property. Dropping it costs nothing and removes a
+dependency on how the data happened to be gathered.
+
+### Which model to recommend
+
+Random forest is recommended. It has the lowest median percentage error
+at about 11.4 percent, which is the metric the deployed tool reports,
+and its dollar r2 is within a rounding error of gradient boosting. On a
+dataset of 228 rows the difference between the two is not meaningful,
+and random forest is the more stable of the two when the training data
+changes.
+
+Linear regression deserves more credit than expected. It is within
+0.01 of the tree models on the log scale, is far easier to explain to a
+non technical audience, and shows the least overfitting. If the agency
+needed to justify every number to a client, it would be a defensible
+choice. It is not recommended here only because its dollar errors on
+expensive properties are materially worse.""")
 
 # Part 4
 md("""\
 ## Part 4: Investigating Prediction Failures
 
-The final gradient boosting model, trained on the same train split
-used above, is used to find the five properties in the holdout set
-with the largest prediction error.""")
+The five largest errors come from the cross validated predictions, so
+every one is a prediction made by a model that had not seen that
+property during training.""")
 
 code("""\
-best_model = fitted_models["Gradient Boosting"]
-predicted = best_model.predict(X_test)
+final_model = build_models()["Random Forest"]
+cv_log_predictions = cross_val_predict(final_model, X, y_log, cv=kf)
+df["predicted_price"] = np.exp(cv_log_predictions)
+df["abs_error"] = (df["sale_price"] - df["predicted_price"]).abs()
+df["pct_error"] = df["abs_error"] / df["sale_price"] * 100
 
-error_table = pd.DataFrame({
-    "property_id": df.loc[X_test.index, "property_id"],
-    "suburb": X_test["suburb"],
-    "property_type": X_test["property_type"],
-    "actual_price": y_test,
-    "predicted_price": predicted,
-})
-error_table["abs_error"] = (error_table["actual_price"] - error_table["predicted_price"]).abs()
-
-top5_errors = error_table.sort_values("abs_error", ascending=False).head(5)
-top5_errors = top5_errors.merge(
-    df[["property_id", "bedrooms", "bathrooms", "land_size_sqm", "floor_area_sqm",
-        "year_built", "agent_description"]],
-    on="property_id",
-)
-top5_errors""")
-
-md("""\
-### What these five cases have in common
-
-Most of the largest errors are older, larger Mosman houses. One case
-is a two bedroom Mosman house on an 888 square metre block that sold
-for 5,240,000 dollars, far above what its bedroom and bathroom count
-alone would suggest, the model under predicted this because a small,
-older house on a very large block is an unusual combination in this
-dataset and the price here is really being set by the land, not the
-building. Another large error is the Liverpool townhouse with a rare
-unobstructed water view mentioned in the agent description, one of
-the unusual sales added on purpose in Part 1, where a feature not
-fully captured by the structured columns pushed the price well above
-the model's prediction, even with the mentions view flag included.
-A modern Parramatta house also shows a large error, which suggests
-that even in the middle price tier, small differences in land size or
-finish quality that are not recorded in this dataset can move price
-by a large margin.
-
-### Are expensive properties actually harder to model?
-It is tempting to conclude from the table above that prestige
-properties are harder for the model to understand. That conclusion
-needs checking, because the five largest errors are all measured in
-dollars, and an expensive property can produce a large dollar error
-while still being predicted accurately in percentage terms. The next
-cell tests this directly by comparing percentage error across price
-and land size groups.""")
+worst = df.nlargest(5, "abs_error")
+worst[["address", "suburb", "property_type", "bedrooms", "bathrooms",
+       "land_size_sqm", "floor_area_sqm", "sale_price", "predicted_price",
+       "abs_error", "pct_error"]].round(0)""")
 
 code("""\
-from sklearn.model_selection import cross_val_predict
-
-# Predict every property using the fold it was held out from, so each
-# prediction comes from a model that never saw that property
-cv_predictions = cross_val_predict(models["Gradient Boosting"], X, y, cv=kf)
-
-error_check = df[["suburb", "sale_price", "land_size_sqm"]].copy()
-error_check["cv_prediction"] = cv_predictions
-error_check["pct_error"] = (
-    (error_check["sale_price"] - error_check["cv_prediction"]).abs()
-    / error_check["sale_price"] * 100
-)
-
-price_cut = error_check["sale_price"].quantile(0.80)
-land_cut = error_check["land_size_sqm"].quantile(0.80)
-
-print("Median percentage error by group")
-print("  most expensive 20 percent  ",
-      round(error_check[error_check["sale_price"] >= price_cut]["pct_error"].median(), 1))
-print("  the other 80 percent       ",
-      round(error_check[error_check["sale_price"] < price_cut]["pct_error"].median(), 1))
-print("  largest 20 percent by land ",
-      round(error_check[error_check["land_size_sqm"] >= land_cut]["pct_error"].median(), 1))
-print("  the rest                   ",
-      round(error_check[error_check["land_size_sqm"] < land_cut]["pct_error"].median(), 1))""")
+print("Median percentage error by suburb")
+print(df.groupby("suburb")["pct_error"].median().round(1).to_string())
+print()
+print("Median percentage error by property type")
+print(df.groupby("property_type")["pct_error"].median().round(1).to_string())
+print()
+price_band = pd.qcut(df["sale_price"], 4, labels=["cheapest 25%", "lower middle", "upper middle", "dearest 25%"])
+print("Median percentage error by price band")
+print(df.groupby(price_band, observed=True)["pct_error"].median().round(1).to_string())""")
 
 md("""\
-This result corrects the assumption. The most expensive properties are
-not proportionally harder to predict, their median percentage error is
-about 12.2 percent against about 13.1 percent for everything else, and
-properties on the largest blocks are actually predicted slightly more
-accurately, about 10.5 percent against about 13.8 percent. The five
-cases in the table above stand out because a 15 percent miss on a four
-million dollar house is a very large number of dollars, not because the
-model understands prestige property worse.
+### What the failures have in common
 
-The practical lesson is about dollar exposure rather than model skill.
-An agent using this tool on a premium property should expect the
-estimate to be wrong by a much larger amount of money, even though the
-model is working about as well as it does anywhere else, so the size of
-the error matters more for the decision being made.
+All five are in Mosman. Four are houses and the fifth is an apartment,
+and they are worth reading individually because the errors run in both
+directions.
 
-### Limitations this points to
-The clearest weakness is that prices here are driven by things the
-dataset simply does not record. Information that was not available but
-would likely help includes recent comparable sales on the same street,
-a genuine description written by a real agent rather than a template,
-internal renovation quality, and view or aspect ratings. Predictions
-should be treated with the most caution where the dollar consequences
-are largest, and where a property has an unusual combination of
-features that is rare in the training data, such as a small house on a
-very large block, since the model has few similar examples to learn
-from.""")
+* **17 Morella Road**, sold 23,000,000, predicted 5,200,000. The most
+  expensive sale in the dataset by a wide margin, and on paper a four
+  bedroom, three bathroom house on 961 square metres, which describes
+  plenty of Mosman houses worth a fifth as much.
+* **34 Rickard Avenue**, sold 9,000,000, predicted 4,700,000, and
+  **5 Botanic Road**, sold 8,700,000, predicted 5,300,000. Both under
+  predicted in the same way and for the same reason.
+* **96 Glover Street**, sold 3,390,000, predicted 7,300,000. This one
+  runs the other way. Four bedrooms, three bathrooms and a recorded 379
+  square metres of land read as a substantial Mosman house, and the
+  model asked more than twice what it actually fetched.
+* **G05 at 15 to 25 Myahgah Road**, sold 4,500,000, predicted
+  1,700,000. A two bedroom apartment that sold for four times the
+  Mosman apartment median of about 1,100,000. Almost certainly a
+  penthouse or a full floor harbourfront unit, but in the data it is
+  simply a two bedroom flat.
+
+The common thread is not that these properties are expensive, it is
+that in Mosman the recorded attributes stop discriminating. There are
+only 13 Mosman houses, spanning 3,390,000 to 23,000,000 dollars, and
+almost half of them, 6 of 13, do not report a land size, so the model is
+asked to separate them using bedroom and bathroom counts that barely
+differ. What actually
+sets these prices is position, outlook, water frontage and build
+quality, and none of that appears anywhere in the data. The Myahgah Road
+apartment shows the same failure inside a property type where the model
+is otherwise reliable.
+
+The suburb breakdown makes the same point. Mosman's median error is
+around 21 percent, against roughly 8 percent in Liverpool and 10 percent
+in Parramatta. Mosman is not harder because it is expensive, it is
+harder because its housing is heterogeneous and the dataset holds few
+comparable sales, while Liverpool and Parramatta are dominated by
+apartments that genuinely are similar to one another.
+
+This is the opposite of the conclusion a synthetic dataset produced
+earlier in this project, where expensive properties turned out to be no
+harder in percentage terms. Real prestige housing behaves differently
+from simulated prestige housing, because the things that drive its price
+are precisely the things a listing does not tabulate.
+
+### What this says about the model's limits
+
+The tool is dependable for the properties it has seen many of, namely
+apartments and units in Parramatta and Liverpool, where median error sits
+below 10 percent. It is weak on Mosman houses, and it cannot say
+anything meaningful about a Parramatta house, because the dataset
+contains none.
+
+The information that would most improve it is not more rows of the same
+kind. It is the fields the listings withhold: internal floor area for
+every property rather than 30 percent of them, the year built, a genuine
+agent description, an aspect or view rating, and above all recent
+comparable sales on the same street. A valuer uses comparable sales
+first and dwelling attributes second, and this model has no access to
+the first.""")
 
 # Part 5
 md("""\
 ## Part 5: Final Deployment and Reflection
 
 ### Building the application
-A small Flask web application, in `app/flask_app.py`, lets a user
-enter property details in a form and get an estimated sale price from
-the saved gradient boosting model. Flask was chosen over a notebook
-style tool because it keeps the prediction logic in one small Python
-file while the page itself is plain HTML and CSS, so the interface can
-be designed properly and it runs with no build step and no internet
-connection.
+A Flask web application in `app/flask_app.py` lets a user enter property
+details and receive an estimated price. Flask keeps the prediction logic
+in one small Python file while the page is plain HTML and CSS, so it
+runs with no build step and no internet connection.
 
-The application does three things. It renders the input form, it
-validates what the user submitted, since that is the point where
-untrusted input enters the system, and it returns the estimate as
-JSON, which the page displays along with a range.
+The application validates its inputs, since the form is where untrusted
+data enters the system, and it reports a range rather than a single
+figure. The range comes from the median percentage error for the suburb
+being estimated, measured by cross validation, so it reflects how the
+model actually performs on properties it has not seen. The median is
+used rather than the mean because a few very large Mosman errors would
+otherwise overstate the uncertainty on a typical apartment.
 
-That range is the reason the error work above matters. Rather than
-showing a single number and implying false precision, the app shows
-how far the model is typically off in the suburb being estimated,
-measured by cross validation so the figure comes from predictions on
-properties the model had not seen. The median is used instead of the
-mean because the unusual sales from Part 1 pull the mean upwards and
-would overstate the error for a normal property.
+The app also refuses to pretend about combinations the data cannot
+support. Parramatta houses have no sales in the training data at all, so
+the app warns rather than quietly returning a confident number.
 
-The final model is refit here on the full dataset, so the deployed app
-benefits from every available row, then saved to disk along with the
-feature list and the per suburb error figures the app needs.""")
+The final model is refit on the full dataset and saved with the feature
+list and the error figures the app needs.""")
 
 code("""\
 import json
 import joblib
 import os
 
-# Refit the chosen model on the full dataset before saving it
-final_model = Pipeline([
-    ("prep", preprocess),
-    ("model", GradientBoostingRegressor(random_state=42)),
-])
-final_model.fit(X, y)
+final_model = build_models()["Random Forest"]
+final_model.fit(X, y_log)
 
 os.makedirs("../models", exist_ok=True)
 joblib.dump(final_model, "../models/best_model.joblib")
 
-# Typical error per suburb, used by the app to show a range.
-# Median is used because a few unusual sales skew the mean upwards.
-error_check["suburb"] = df["suburb"]
-suburb_error = error_check.groupby("suburb")["pct_error"].median().round(1)
-overall_error = round(error_check["pct_error"].median(), 1)
+suburb_error = df.groupby("suburb")["pct_error"].median().round(1)
+overall_error = round(df["pct_error"].median(), 1)
+
+# Combinations with too few sales to predict responsibly
+support = df.groupby(["suburb", "property_type"]).size()
+thin_support = [
+    {"suburb": suburb, "property_type": property_type, "count": int(count)}
+    for (suburb, property_type), count in support.items() if count < 5
+]
+observed = sorted({f"{s}|{t}" for s, t in zip(df["suburb"], df["property_type"])})
 
 schema = {
     "numeric_features": numeric_features,
     "categorical_features": categorical_features,
     "suburb_options": sorted(df["suburb"].unique().tolist()),
     "property_type_options": sorted(df["property_type"].unique().tolist()),
-    "current_year": current_year,
+    "sale_method_options": sorted(df["sale_method"].dropna().unique().tolist()),
     "suburb_typical_error_pct": suburb_error.to_dict(),
     "overall_typical_error_pct": overall_error,
+    "observed_combinations": observed,
+    "thin_support": thin_support,
+    "training_rows": int(len(df)),
+    "target_is_log": True,
 }
 with open("../models/feature_schema.json", "w") as f:
     json.dump(schema, f, indent=2)
 
-print("Saved model and feature schema to the models folder")
+print("Saved model and schema")
+print()
 print("Typical percentage error per suburb")
-print(suburb_error)""")
+print(suburb_error.to_string())
+print()
+print("Combinations with fewer than 5 sales, the app warns on these")
+for item in thin_support:
+    print(f"  {item['suburb']:<12} {item['property_type']:<10} {item['count']}")""")
 
 md("""\
-Instructions for running the application are in the project README.
-In short, install the packages in `requirements.txt`, run
-`python3 app/flask_app.py`, then open `http://127.0.0.1:5000` in a
-browser. Screenshots of the running application are saved in
-`app/screenshots` and should be included in the written report.
+Instructions for running the application are in the project README. In
+short, install the packages in `requirements.txt`, run
+`python3 app/flask_app.py`, and open `http://127.0.0.1:5000`.
+Screenshots are in `app/screenshots`.
 
 ### Reflection
 
-This project moved through the full workflow from data collection to
-a deployed prediction tool. Because real listings could not be
-scraped in this environment, a carefully calibrated simulated dataset
-was used instead, which was enough to build and test every stage of
-the pipeline, but is a real limitation, a model trained on real
-listings would need to deal with messier, less consistent data than a
-formula can produce.
+The most useful lessons in this project came from the data rather than
+the algorithms.
 
-The evaluation step showed a clear pattern that is common in machine
-learning, the more flexible model, gradient boosting, fit the
-training data almost perfectly yet still generalised best, while the
-simplest model, linear regression, was too rigid to capture the true
-pricing pattern. This is a useful reminder that a high training score
-on its own says very little, cross validation and a holdout set are
-what actually show whether a model will be useful on new data.
+Three of the findings above only appeared because a result was checked
+instead of accepted. The sale date looked like a strong price signal at
+negative 0.40 until it was compared within suburbs, where it vanished,
+revealing that it described the order the data was collected in. The
+area column looked like a single useful feature until the houses and the
+apartments were separated, at which point it turned out to be two
+different measurements sharing a name. Fifteen properties appeared twice
+because the two sites list the same sale under different URLs, and
+without an address comparison those would have carried double weight and
+leaked across cross validation folds. None of these were visible in the
+summary statistics. All three would have quietly damaged the model.
 
-The error investigation taught the most useful lesson of the project,
-and it was not the lesson expected at the start. The five worst
-predictions were all expensive properties, which looked like evidence
-that the model handles prestige housing badly. Testing that idea in
-percentage terms showed the opposite, those properties are predicted
-about as accurately as any others, they simply carry much larger
-dollar errors because they are expensive. Acting on the first reading
-would have meant adding a warning to the app that the data does not
-support. This is why the deployed app reports a percentage based range
-per suburb rather than a blanket caution, and it is a reminder to
-check which units an error is measured in before drawing a conclusion
-from it.
+The modelling itself was less dramatic than expected. Predicting the log
+of the price mattered far more than the choice of algorithm, turning
+gradient boosting from an r2 of 0.05 into 0.54, while the gap between a
+ridge regression and a tuned tree ensemble on the log scale was under
+0.01. On a dataset this size, with these features, the effort is better
+spent on data quality than on model selection.
 
-If more time, data and computing power were available, the next steps
-would be collecting real listings to replace the simulated dataset,
-adding recent comparable sale prices as a feature, trying a proper
-text model on real agent descriptions instead of simple keyword flags,
-and tuning the gradient boosting model to reduce its overfitting risk
-before considering it for real decisions.""")
+The honest summary of the tool is that it is useful for Liverpool and
+Parramatta apartments and unreliable for Mosman houses, and that this
+is a property of the data rather than a bug. Roughly 85 percent of the
+dataset is strata, which reflects what genuinely sold in these suburbs
+over seven months, so the model has hundreds of comparable apartments
+and barely a dozen prestige houses. A deployment that presented both
+kinds of estimate with equal confidence would be misleading, which is
+why the app reports suburb specific ranges and flags combinations it has
+too few sales to judge.
+
+With more time and resources the priorities would be, in order:
+collecting the agent descriptions and build years that the listings do
+publish on individual property pages, which would restore the text
+features the task sheet encourages; widening the collection window and
+balancing property types so Parramatta houses exist at all; and adding
+recent comparable street sales, which is the single feature most likely
+to close the gap on the prestige end of the market.""")
 
 nb["cells"] = cells
 with open("notebooks/sydney_housing_price_prediction.ipynb", "w") as f:

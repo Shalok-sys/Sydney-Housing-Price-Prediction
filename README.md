@@ -7,9 +7,10 @@ those predictions through a small web application.
 ## Project layout
 
 ```
-data/                the housing dataset used in the notebook
+data/raw/            the collected listings, as transcribed
+data/processed/      the cleaned modelling table
 notebooks/           the main analysis notebook, parts 1 to 5
-scripts/             the scripts used to build the dataset and notebook
+scripts/             collection schema, ingest, validation, cleaning, notebook build
 models/              the saved model, its feature list and its error figures
 app/                 the Flask web application
 app/templates/       the page markup
@@ -18,24 +19,35 @@ app/screenshots/     screenshots of the running app
 requirements.txt     python packages needed to run everything
 ```
 
-## Note on the dataset
+## The dataset
 
-The task asks for sold listings collected manually from a site such as
-realestate.com.au or domain.com.au. Automated scraping of those sites
-was not reliable in this environment because of bot protection and
-site terms of use, so `scripts/generate_dataset.py` builds a simulated
-dataset instead. It uses a sale price formula calibrated to public
-median price ranges for each suburb, then adds realistic noise,
-missing values and a handful of unusual sales. This is clearly stated
-again inside the notebook. Before final submission, check whether the
-unit requires genuine manually collected listings for full marks on
-the data collection criterion, and replace or supplement this dataset
-if needed.
+231 real sold listings collected by hand from realestate.com.au and
+domain.com.au, the two sites named in the task sheet, using the Claude
+browser extension to read each results page and transcribe the visible
+fields. No crawler was run against either site. Both prohibit automated
+scraping in their terms of use, and the task sheet asks for the dataset
+to be constructed manually.
+
+Every row carries the URL of the listing it came from and the date it
+was collected, so any figure in the analysis can be traced back to its
+source. Only fields the listings actually displayed were recorded, and
+empty cells mean the listing did not publish that value rather than that
+a value was estimated.
+
+After cleaning, 228 properties are used for modelling. See
+`docs/DATA_COLLECTION.md` for how to collect more, and the notebook for
+what was removed and why.
+
+Two things to know about this data. It is about 85 percent apartments
+and units, which is what actually sold in these suburbs over the seven
+month window, so the model is strong on strata and weak on houses.
+Parramatta returned no house sales at all, and the app says so rather
+than quietly guessing.
 
 ## Acknowledgement of GenAI use
 
 Claude, an AI coding assistant, was used to help plan this project and
-write the dataset generator, notebook, model code and Flask app.
+write the collection tooling, notebook, model code and Flask app.
 Every number and result quoted in the notebook comes from actually
 running the code, nothing was written in first and made up. Review,
 understand and where useful extend this work in your own words before
@@ -57,10 +69,12 @@ required by the task instructions.
 ## Rebuilding the dataset and notebook
 
 The dataset and notebook are already included in this repository, so
-this step is only needed if you want to regenerate them.
+this step is only needed after collecting more listings.
 
 ```
-python3 scripts/generate_dataset.py
+python3 scripts/ingest_listings.py
+python3 scripts/validate_dataset.py data/raw/collected_listings.csv
+python3 scripts/prepare_features.py
 python3 scripts/build_notebook.py
 jupyter nbconvert --to notebook --execute --inplace notebooks/sydney_housing_price_prediction.ipynb
 ```
@@ -103,6 +117,5 @@ layout.
 
 ## Reproducing results
 
-All random steps in the dataset generator and the models use a fixed
-random seed, so rerunning the commands above should give the same
-numbers shown in the notebook.
+The models use a fixed random seed, so rerunning the commands above on
+the same collected data gives the same numbers shown in the notebook.
