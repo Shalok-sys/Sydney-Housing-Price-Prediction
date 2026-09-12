@@ -1,0 +1,33 @@
+{
+  "numeric_features": [
+    "bedrooms",
+    "bathrooms",
+    "parking_spaces",
+    "land_size_sqm",
+    "floor_area_sqm",
+    "distance_to_cbd_km",
+    "distance_to_station_km",
+    "distance_to_school_km",
+    "property_age",
+    "renovated",
+    "has_pool",
+    "days_on_market",
+    "description_length",
+    "mentions_view"
+  ],
+  "categorical_features": [
+    "suburb",
+    "property_type"
+  ],
+  "suburb_options": [
+    "Liverpool",
+    "Mosman",
+    "Parramatta"
+  ],
+  "property_type_options": [
+    "House",
+    "Townhouse",
+    "Unit"
+  ],
+  "current_year": 2026
+}
