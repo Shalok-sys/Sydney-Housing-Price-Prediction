@@ -136,6 +136,42 @@ def clean_features(value):
     return ";".join(parts)
 
 
+# Street types written both ways on the two sites
+STREET_TYPES = {
+    "street": "st", "road": "rd", "avenue": "ave", "av": "ave",
+    "drive": "dr", "place": "pl", "court": "ct", "crescent": "cres",
+    "parade": "pde", "terrace": "tce", "lane": "ln", "highway": "hwy",
+    "close": "cl", "grove": "gr", "square": "sq", "boulevard": "blvd",
+    "circuit": "cct", "esplanade": "esp", "way": "way",
+}
+
+
+def address_key(address, suburb):
+    """
+    Build a comparable form of an address.
+
+    The same property listed on both sites rarely matches character for
+    character, one may say "12 Raglan Street, Mosman NSW 2088" and the
+    other "12 Raglan St". This reduces both to the same key so the
+    property is only collected once.
+    """
+    text = str(address or "").lower()
+
+    # Drop the suburb, state and postcode tail if the site included it
+    text = re.sub(r"\b(nsw|vic|qld|wa|sa|tas|act|nt)\b", " ", text)
+    text = re.sub(r"\b\d{4}\b", " ", text)
+    if suburb:
+        text = text.replace(str(suburb).lower(), " ")
+
+    # Unit 5, 12 Smith St and 5/12 Smith St are the same address
+    text = re.sub(r"\b(unit|apt|apartment|flat|villa)\s*", " ", text)
+    text = text.replace("/", " ")
+
+    text = re.sub(r"[^a-z0-9 ]", " ", text)
+    words = [STREET_TYPES.get(word, word) for word in text.split()]
+    return " ".join(words).strip()
+
+
 def normalise(raw):
     """Turn one parsed row into schema shaped values."""
     return {
@@ -178,11 +214,12 @@ def reasons_to_reject(row):
 
 def read_existing():
     if not os.path.exists(DATASET):
-        return [], set()
+        return [], set(), set()
     with open(DATASET, newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
-    seen = {r.get("listing_url", "").strip().lower() for r in rows}
-    return rows, seen
+    seen_urls = {r.get("listing_url", "").strip().lower() for r in rows}
+    seen_addresses = {address_key(r.get("address"), r.get("suburb")) for r in rows}
+    return rows, seen_urls, seen_addresses
 
 
 def parse_inbox(text):
@@ -219,20 +256,32 @@ def main():
         print(f"{INBOX} has no rows in it.")
         return 2
 
-    existing, seen_urls = read_existing()
+    existing, seen_urls, seen_addresses = read_existing()
 
-    added, duplicates, rejected = [], 0, []
+    added, rejected = [], []
+    same_listing, same_property = 0, 0
     for raw in raw_rows:
         row = normalise(raw)
         problems = reasons_to_reject(row)
         if problems:
             rejected.append((row.get("address") or row.get("listing_url") or "unnamed row", problems))
             continue
-        key = row["listing_url"].strip().lower()
-        if key in seen_urls:
-            duplicates += 1
+
+        url_key = row["listing_url"].strip().lower()
+        if url_key in seen_urls:
+            same_listing += 1
             continue
-        seen_urls.add(key)
+
+        # The same property listed on both sites has two different urls,
+        # so the address is what catches it
+        place_key = address_key(row["address"], row["suburb"])
+        if place_key and place_key in seen_addresses:
+            same_property += 1
+            continue
+
+        seen_urls.add(url_key)
+        if place_key:
+            seen_addresses.add(place_key)
         added.append(row)
 
     if added:
@@ -245,9 +294,10 @@ def main():
             writer.writerows(added)
 
     print(f"Read {len(raw_rows)} rows from {INBOX}")
-    print(f"  added      {len(added)}")
-    print(f"  duplicate  {duplicates}")
-    print(f"  rejected   {len(rejected)}")
+    print(f"  added                    {len(added)}")
+    print(f"  already collected        {same_listing}")
+    print(f"  same property, other site {same_property}")
+    print(f"  rejected                 {len(rejected)}")
 
     if rejected:
         print()
