@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sydney Property Price Estimator</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<header class="masthead">
+  <span class="mark">SP</span>
+  <span class="masthead_title">Sydney Property Price Estimator</span>
+  <span class="masthead_meta">Gradient boosting model</span>
+</header>
+
+<main class="shell">
+
+  <div class="intro">
+    <h1>Estimate a sale price</h1>
+    <p>
+      Enter the details of a property in Mosman, Parramatta or Liverpool.
+      The estimate comes from a model trained on 120 recorded sales, and it
+      is shown with the range the model is typically accurate to.
+    </p>
+  </div>
+
+  <div class="layout">
+
+    <form id="predict_form" class="panel form_panel" novalidate>
+
+      <fieldset>
+        <legend>Location</legend>
+        <div class="field_grid">
+          <div class="field">
+            <label for="suburb">Suburb</label>
+            <select id="suburb" name="suburb">
+              {% for option in schema.suburb_options %}
+              <option value="{{ option }}">{{ option }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="field">
+            <label for="property_type">Property type</label>
+            <select id="property_type" name="property_type">
+              {% for option in schema.property_type_options %}
+              <option value="{{ option }}"{% if option == 'House' %} selected{% endif %}>{{ option }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="field">
+            <label for="distance_to_cbd_km">Distance to the CBD</label>
+            <input type="number" id="distance_to_cbd_km" name="distance_to_cbd_km" value="24" step="0.1" min="0">
+            <span class="hint">Kilometres</span>
+          </div>
+          <div class="field">
+            <label for="distance_to_station_km">Distance to a station</label>
+            <input type="number" id="distance_to_station_km" name="distance_to_station_km" value="1.0" step="0.1" min="0">
+            <span class="hint">Kilometres</span>
+          </div>
+          <div class="field">
+            <label for="distance_to_school_km">Distance to a school</label>
+            <input type="number" id="distance_to_school_km" name="distance_to_school_km" value="1.0" step="0.1" min="0">
+            <span class="hint">Kilometres</span>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>The property</legend>
+        <div class="field_grid">
+          <div class="field">
+            <label for="bedrooms">Bedrooms</label>
+            <input type="number" id="bedrooms" name="bedrooms" value="3" min="0" max="20">
+          </div>
+          <div class="field">
+            <label for="bathrooms">Bathrooms</label>
+            <input type="number" id="bathrooms" name="bathrooms" value="2" min="0" max="20">
+          </div>
+          <div class="field">
+            <label for="parking_spaces">Parking spaces</label>
+            <input type="number" id="parking_spaces" name="parking_spaces" value="1" min="0" max="20">
+          </div>
+          <div class="field" id="land_field">
+            <label for="land_size_sqm">Land size</label>
+            <input type="number" id="land_size_sqm" name="land_size_sqm" value="450" step="1" min="0">
+            <span class="hint">Square metres. Not used for units.</span>
+          </div>
+          <div class="field">
+            <label for="floor_area_sqm">Floor area</label>
+            <input type="number" id="floor_area_sqm" name="floor_area_sqm" value="200" step="1" min="10">
+            <span class="hint">Square metres</span>
+          </div>
+          <div class="field">
+            <label for="year_built">Year built</label>
+            <input type="number" id="year_built" name="year_built" value="2000" min="1850" max="{{ schema.current_year }}">
+          </div>
+          <div class="field">
+            <label for="days_on_market">Days on market</label>
+            <input type="number" id="days_on_market" name="days_on_market" value="30" min="0">
+          </div>
+        </div>
+
+        <div class="toggles">
+          <label class="toggle">
+            <input type="checkbox" id="renovated" name="renovated">
+            <span>Recently renovated</span>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="has_pool" name="has_pool">
+            <span>Has a pool</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Listing text</legend>
+        <div class="field">
+          <label for="agent_description">Agent description</label>
+          <textarea id="agent_description" name="agent_description" rows="3"></textarea>
+          <span class="hint">Optional. The model reads its length and whether it mentions a view.</span>
+        </div>
+      </fieldset>
+
+      <button type="submit" id="submit_button" class="submit">Estimate price</button>
+    </form>
+
+    <aside class="panel result_panel" id="result_panel">
+
+      <div class="result_state" id="state_empty">
+        <p class="result_label">Estimated sale price</p>
+        <p class="result_placeholder">Fill in the property details and press Estimate price.</p>
+      </div>
+
+      <div class="result_state is_hidden" id="state_loading">
+        <p class="result_label">Estimated sale price</p>
+        <div class="skeleton skeleton_price"></div>
+        <div class="skeleton skeleton_line"></div>
+        <div class="skeleton skeleton_line short"></div>
+      </div>
+
+      <div class="result_state is_hidden" id="state_error">
+        <p class="result_label">Something went wrong</p>
+        <p class="result_error" id="error_message"></p>
+      </div>
+
+      <div class="result_state is_hidden" id="state_result">
+        <p class="result_label">Estimated sale price</p>
+        <p class="result_price" id="result_price"></p>
+        <p class="result_range" id="result_range"></p>
+        <div class="result_note">
+          <p id="result_accuracy"></p>
+          <p>
+            Treat this as a guide, not a valuation. The model was trained on a
+            small simulated dataset and cannot see street quality, views,
+            renovation standard or recent comparable sales.
+          </p>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</main>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

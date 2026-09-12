@@ -29,5 +29,11 @@
     "Townhouse",
     "Unit"
   ],
-  "current_year": 2026
+  "current_year": 2026,
+  "suburb_typical_error_pct": {
+    "Liverpool": 13.8,
+    "Mosman": 14.0,
+    "Parramatta": 10.6
+  },
+  "overall_typical_error_pct": 13.1
 }

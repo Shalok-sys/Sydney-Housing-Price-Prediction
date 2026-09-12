@@ -7,13 +7,15 @@ those predictions through a small web application.
 ## Project layout
 
 ```
-data/                 the housing dataset used in the notebook
-notebooks/             the main analysis notebook, parts 1 to 5
-scripts/                the scripts used to build the dataset and notebook
-models/                the saved model and its feature schema
-app/                    the Streamlit web application
-app/screenshots/       example screenshots of the running app
-requirements.txt       python packages needed to run everything
+data/                the housing dataset used in the notebook
+notebooks/           the main analysis notebook, parts 1 to 5
+scripts/             the scripts used to build the dataset and notebook
+models/              the saved model, its feature list and its error figures
+app/                 the Flask web application
+app/templates/       the page markup
+app/static/          the stylesheet and the form script
+app/screenshots/     screenshots of the running app
+requirements.txt     python packages needed to run everything
 ```
 
 ## Note on the dataset
@@ -33,7 +35,7 @@ if needed.
 ## Acknowledgement of GenAI use
 
 Claude, an AI coding assistant, was used to help plan this project and
-write the dataset generator, notebook, model code and Streamlit app.
+write the dataset generator, notebook, model code and Flask app.
 Every number and result quoted in the notebook comes from actually
 running the code, nothing was written in first and made up. Review,
 understand and where useful extend this work in your own words before
@@ -76,15 +78,28 @@ jupyter notebook notebooks/sydney_housing_price_prediction.ipynb
 ## Running the web application
 
 ```
-streamlit run app/streamlit_app.py
+python3 app/flask_app.py
 ```
 
-Then open the local web address shown in the terminal, usually
-`http://localhost:8501`. Fill in the property details on the left and
-right side of the form and press Predict sale price. Example
-screenshots of the form and a prediction are in
-`app/screenshots/app_form_empty.png` and
-`app/screenshots/app_prediction_result.png`.
+Then open `http://127.0.0.1:5000` in a browser.
+
+How to use it. Pick the suburb and property type, fill in the property
+details, and press Estimate price. The result panel shows the estimated
+sale price together with a likely range. That range is not a guess, it
+comes from how far the model is typically off in that suburb, measured
+by cross validation, so the estimate is never presented as a single
+exact figure. The agent description box is optional, the model uses its
+length and whether it mentions a view.
+
+Two details worth knowing. Choosing Unit switches the land size input
+off, because units have no land of their own and the model was trained
+that way. Values submitted from the form are validated on the server,
+so out of range or missing entries return a clear message rather than a
+broken estimate.
+
+Screenshots are in `app/screenshots/`, covering the empty form, a
+completed estimate, the same estimate in dark mode, and the mobile
+layout.
 
 ## Reproducing results
 

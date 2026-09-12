@@ -507,33 +507,99 @@ that even in the middle price tier, small differences in land size or
 finish quality that are not recorded in this dataset can move price
 by a large margin.
 
+### Are expensive properties actually harder to model?
+It is tempting to conclude from the table above that prestige
+properties are harder for the model to understand. That conclusion
+needs checking, because the five largest errors are all measured in
+dollars, and an expensive property can produce a large dollar error
+while still being predicted accurately in percentage terms. The next
+cell tests this directly by comparing percentage error across price
+and land size groups.""")
+
+code("""\
+from sklearn.model_selection import cross_val_predict
+
+# Predict every property using the fold it was held out from, so each
+# prediction comes from a model that never saw that property
+cv_predictions = cross_val_predict(models["Gradient Boosting"], X, y, cv=kf)
+
+error_check = df[["suburb", "sale_price", "land_size_sqm"]].copy()
+error_check["cv_prediction"] = cv_predictions
+error_check["pct_error"] = (
+    (error_check["sale_price"] - error_check["cv_prediction"]).abs()
+    / error_check["sale_price"] * 100
+)
+
+price_cut = error_check["sale_price"].quantile(0.80)
+land_cut = error_check["land_size_sqm"].quantile(0.80)
+
+print("Median percentage error by group")
+print("  most expensive 20 percent  ",
+      round(error_check[error_check["sale_price"] >= price_cut]["pct_error"].median(), 1))
+print("  the other 80 percent       ",
+      round(error_check[error_check["sale_price"] < price_cut]["pct_error"].median(), 1))
+print("  largest 20 percent by land ",
+      round(error_check[error_check["land_size_sqm"] >= land_cut]["pct_error"].median(), 1))
+print("  the rest                   ",
+      round(error_check[error_check["land_size_sqm"] < land_cut]["pct_error"].median(), 1))""")
+
+md("""\
+This result corrects the assumption. The most expensive properties are
+not proportionally harder to predict, their median percentage error is
+about 12.2 percent against about 13.1 percent for everything else, and
+properties on the largest blocks are actually predicted slightly more
+accurately, about 10.5 percent against about 13.8 percent. The five
+cases in the table above stand out because a 15 percent miss on a four
+million dollar house is a very large number of dollars, not because the
+model understands prestige property worse.
+
+The practical lesson is about dollar exposure rather than model skill.
+An agent using this tool on a premium property should expect the
+estimate to be wrong by a much larger amount of money, even though the
+model is working about as well as it does anywhere else, so the size of
+the error matters more for the decision being made.
+
 ### Limitations this points to
-Prestige, low density, older properties on large blocks are harder to
-model than typical mid market homes and units, because their price
-depends heavily on land value, heritage character and unique features
-that a handful of structured columns cannot fully describe.
-Information that was not available but would likely help includes
-recent comparable sales on the same street, a genuine text description
-written by a real agent rather than a template, internal renovation
-quality, and view or aspect ratings. Because of this, predictions for
-high value, unique properties, especially in Mosman, should be treated
-as a rough guide only, while predictions for standard houses and units
-in Parramatta and Liverpool can be trusted with more confidence.""")
+The clearest weakness is that prices here are driven by things the
+dataset simply does not record. Information that was not available but
+would likely help includes recent comparable sales on the same street,
+a genuine description written by a real agent rather than a template,
+internal renovation quality, and view or aspect ratings. Predictions
+should be treated with the most caution where the dollar consequences
+are largest, and where a property has an unusual combination of
+features that is rare in the training data, such as a small house on a
+very large block, since the model has few similar examples to learn
+from.""")
 
 # Part 5
 md("""\
 ## Part 5: Final Deployment and Reflection
 
 ### Building the application
-A small Streamlit web application, in `app/streamlit_app.py`, lets a
-user enter property details in a form and get a predicted sale price
-from the saved gradient boosting model. Streamlit was chosen because
-it turns a Python script into a working web form with very little
-extra code, which fits a prototype like this one.
+A small Flask web application, in `app/flask_app.py`, lets a user
+enter property details in a form and get an estimated sale price from
+the saved gradient boosting model. Flask was chosen over a notebook
+style tool because it keeps the prediction logic in one small Python
+file while the page itself is plain HTML and CSS, so the interface can
+be designed properly and it runs with no build step and no internet
+connection.
 
-The final model is refit here on the full dataset, so the deployed
-app benefits from every available row, and is saved to disk along
-with the list of feature columns the app needs to build.""")
+The application does three things. It renders the input form, it
+validates what the user submitted, since that is the point where
+untrusted input enters the system, and it returns the estimate as
+JSON, which the page displays along with a range.
+
+That range is the reason the error work above matters. Rather than
+showing a single number and implying false precision, the app shows
+how far the model is typically off in the suburb being estimated,
+measured by cross validation so the figure comes from predictions on
+properties the model had not seen. The median is used instead of the
+mean because the unusual sales from Part 1 pull the mean upwards and
+would overstate the error for a normal property.
+
+The final model is refit here on the full dataset, so the deployed app
+benefits from every available row, then saved to disk along with the
+feature list and the per suburb error figures the app needs.""")
 
 code("""\
 import json
@@ -550,24 +616,34 @@ final_model.fit(X, y)
 os.makedirs("../models", exist_ok=True)
 joblib.dump(final_model, "../models/best_model.joblib")
 
+# Typical error per suburb, used by the app to show a range.
+# Median is used because a few unusual sales skew the mean upwards.
+error_check["suburb"] = df["suburb"]
+suburb_error = error_check.groupby("suburb")["pct_error"].median().round(1)
+overall_error = round(error_check["pct_error"].median(), 1)
+
 schema = {
     "numeric_features": numeric_features,
     "categorical_features": categorical_features,
     "suburb_options": sorted(df["suburb"].unique().tolist()),
     "property_type_options": sorted(df["property_type"].unique().tolist()),
     "current_year": current_year,
+    "suburb_typical_error_pct": suburb_error.to_dict(),
+    "overall_typical_error_pct": overall_error,
 }
 with open("../models/feature_schema.json", "w") as f:
     json.dump(schema, f, indent=2)
 
-print("Saved model and feature schema to the models folder")""")
+print("Saved model and feature schema to the models folder")
+print("Typical percentage error per suburb")
+print(suburb_error)""")
 
 md("""\
 Instructions for running the application are in the project README.
 In short, install the packages in `requirements.txt`, run
-`streamlit run app/streamlit_app.py`, then open the local web address
-shown in the terminal. Screenshots of the running application should
-be added to the written report.
+`python3 app/flask_app.py`, then open `http://127.0.0.1:5000` in a
+browser. Screenshots of the running application are saved in
+`app/screenshots` and should be included in the written report.
 
 ### Reflection
 
@@ -587,13 +663,18 @@ pricing pattern. This is a useful reminder that a high training score
 on its own says very little, cross validation and a holdout set are
 what actually show whether a model will be useful on new data.
 
-Looking at the largest errors also showed that accuracy is not even
-across all types of properties. Predictions are much more reliable for
-typical homes and units than for unique, high value properties where
-price is driven by land, heritage and features that are hard to write
-down as numbers. A fair deployment of this tool would need to make
-that limitation clear to anyone using it, rather than presenting every
-prediction with the same confidence.
+The error investigation taught the most useful lesson of the project,
+and it was not the lesson expected at the start. The five worst
+predictions were all expensive properties, which looked like evidence
+that the model handles prestige housing badly. Testing that idea in
+percentage terms showed the opposite, those properties are predicted
+about as accurately as any others, they simply carry much larger
+dollar errors because they are expensive. Acting on the first reading
+would have meant adding a warning to the app that the data does not
+support. This is why the deployed app reports a percentage based range
+per suburb rather than a blanket caution, and it is a reminder to
+check which units an error is measured in before drawing a conclusion
+from it.
 
 If more time, data and computing power were available, the next steps
 would be collecting real listings to replace the simulated dataset,
