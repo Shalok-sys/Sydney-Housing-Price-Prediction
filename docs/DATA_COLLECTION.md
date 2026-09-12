@@ -93,13 +93,26 @@ is, and missing data is a normal thing to discuss in the report.
 
 ## Saving what you collect
 
-Start from the template, which already has the right header row.
+Do not paste into the CSV by hand. Paste into the inbox file instead and
+let the ingest script tidy it up.
 
 ```
-cp data/raw/collected_listings_template.csv data/raw/collected_listings.csv
+1. Paste the extension output into data/raw/inbox.txt
+2. python3 scripts/ingest_listings.py
+3. : > data/raw/inbox.txt
 ```
 
-Paste the rows under the header as you go.
+The ingest script cleans up whatever shape the extension gives back. It
+turns `$4,250,000` into `4250000`, reads `14/03/2026` and `2 May 2026`
+and `20 June 2026` all as proper dates, strips `sqm` and `m²` off land
+sizes, maps `apartment / unit / flat` to `Apartment` and `private sale`
+to `Private treaty`, and rewrites feature lists to use semicolons.
+
+It also protects the file. Rows are only ever appended, never
+overwritten. A listing already collected is skipped, so pasting the same
+batch twice is harmless. Rows that cannot be used, such as a listing
+with no disclosed price or one from a suburb outside the three, are
+rejected and reported with the reason rather than being silently added.
 
 ## Checking as you go
 
