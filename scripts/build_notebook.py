@@ -615,6 +615,10 @@ df["predicted_price"] = np.exp(cv_log_predictions)
 df["abs_error"] = (df["sale_price"] - df["predicted_price"]).abs()
 df["pct_error"] = df["abs_error"] / df["sale_price"] * 100
 
+# Keep the cross validated predictions so the report figures use the
+# same numbers as this notebook rather than recomputing them
+df.to_csv("../data/processed/predictions.csv", index=False)
+
 worst = df.nlargest(5, "abs_error")
 worst[["address", "suburb", "property_type", "bedrooms", "bathrooms",
        "land_size_sqm", "floor_area_sqm", "sale_price", "predicted_price",
