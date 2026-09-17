@@ -184,6 +184,8 @@ def normalise(raw):
         "bathrooms": clean_number(raw.get("bathrooms")),
         "parking_spaces": clean_number(raw.get("parking_spaces")),
         "land_size_sqm": clean_number(raw.get("land_size_sqm")),
+        "floor_area_sqm": clean_number(raw.get("floor_area_sqm")),
+        "year_built": clean_number(raw.get("year_built")),
         "sale_price": clean_number(raw.get("sale_price")),
         "sale_date": clean_date(raw.get("sale_date")),
         "sale_method": clean_choice(raw.get("sale_method"), METHOD_SYNONYMS, SALE_METHODS),

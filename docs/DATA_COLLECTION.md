@@ -133,6 +133,36 @@ outside the allowed list, a sale date in the future, a listing URL that
 is not from one of the two sites, the same listing collected twice, and
 any suburb still short of 30 properties.
 
+## Second pass, detail from individual listing pages
+
+The results pages show summary cards only. The description, the feature
+tags, the internal floor area and sometimes the build year sit on each
+property's own page. Collecting those adds several features and claims
+the text data credit the task sheet encourages.
+
+This is an update to listings already collected, not new listings, so it
+uses a different script. `ingest_listings.py` treats a url it has seen
+before as a duplicate and skips it, which is right for new properties
+and wrong here.
+
+```
+1. Paste the detail rows into data/raw/inbox.txt
+2. python3 scripts/enrich_listings.py
+3. : > data/raw/inbox.txt
+```
+
+`enrich_listings.py` matches each row to a stored listing by its url and
+fills only the empty cells. It never replaces a value that is already
+there, so running it twice is harmless and a half finished pass cannot
+damage the first one. It reports how many cells it filled and the
+coverage of each enrichment column across the whole dataset.
+
+Open a property from the search results, give the extension the detail
+prompt, then go back and open the next one. There is no need to do all
+of them. Coverage of 40 percent is the point at which a feature starts
+being modelled, so roughly 90 of the 231 listings is the target worth
+aiming at.
+
 ## When the file passes
 
 Tell me and I will run the modelling pipeline against the real data,

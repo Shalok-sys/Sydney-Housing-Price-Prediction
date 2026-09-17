@@ -1,1 +1,1 @@
-listing_url,address,suburb,postcode,property_type,bedrooms,bathrooms,parking_spaces,land_size_sqm,sale_price,sale_date,sale_method,agent_description,features_list,date_collected
+listing_url,address,suburb,postcode,property_type,bedrooms,bathrooms,parking_spaces,land_size_sqm,floor_area_sqm,year_built,sale_price,sale_date,sale_method,agent_description,features_list,date_collected

@@ -1,229 +1,229 @@
-listing_url,address,suburb,postcode,property_type,bedrooms,bathrooms,parking_spaces,land_size_sqm,sale_price,sale_date,sale_method,agent_description,features_list,date_collected,floor_area_sqm,days_since_first_sale,sale_month,bath_per_bed
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-152106856,8/88 Avenue Road,Mosman,2088,Apartment,1.0,1,1.0,,730000,2026-09-12,Private treaty,,,2026-09-12,,206,9,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-152160876,7/10 Muston Street,Mosman,2088,Apartment,1.0,1,,,750000,2026-09-08,Private treaty,,,2026-09-12,,202,9,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151967096,13/5 The Esplanade,Mosman,2088,Apartment,1.0,1,,,1450000,2026-09-03,Private treaty,,,2026-09-12,,197,9,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151988036,G05/15-25 Myahgah Road,Mosman,2088,Apartment,2.0,2,2.0,,4500000,2026-08-31,Unknown,,,2026-09-12,,194,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151579300,3/17 Milner Street,Mosman,2088,Apartment,1.0,1,,,790000,2026-08-21,Private treaty,,,2026-09-12,,184,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151841804,111/116 Belmont Road,Mosman,2088,Apartment,1.0,1,1.0,,930000,2026-08-19,Private treaty,,,2026-09-12,74.0,182,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151781284,4/139-153 Middle Head Road,Mosman,2088,Apartment,3.0,2,2.0,,2600000,2026-08-14,Private treaty,,,2026-09-12,,177,8,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151600636,14/669 Military Road,Mosman,2088,Apartment,2.0,1,1.0,,1600000,2026-08-12,Private treaty,,,2026-09-12,96.0,175,8,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151799252,9/71 Avenue Road,Mosman,2088,Apartment,1.0,1,1.0,,700000,2026-08-10,Private treaty,,,2026-09-12,,173,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151332820,3/6 Brierley Street,Mosman,2088,Apartment,2.0,1,,,975000,2026-08-04,Private treaty,,,2026-09-12,,167,8,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151728984,11/23 Warringah Road,Mosman,2088,Apartment,1.0,1,1.0,,865000,2026-07-31,Private treaty,,,2026-09-12,,163,7,1.0
-https://www.realestate.com.au/sold/property-house-nsw-mosman-150195184,5 Botanic Road,Mosman,2088,House,4.0,3,2.0,,8700000,2026-07-22,Private treaty,,,2026-09-12,,154,7,0.75
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151449168,8/6 Punch Street,Mosman,2088,Apartment,1.0,1,,,700000,2026-07-20,Unknown,,,2026-09-12,,152,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151472668,4/3 Millett Road,Mosman,2088,Apartment,2.0,1,1.0,,1050000,2026-07-16,Private treaty,,,2026-09-12,,148,7,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-mosman-151380692,7/154 Raglan Street,Mosman,2088,Unit,1.0,1,1.0,,785000,2026-07-14,Private treaty,,,2026-09-12,,146,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151578736,20/96 Ourimbah Road,Mosman,2088,Apartment,2.0,1,1.0,,1030000,2026-07-07,Unknown,,,2026-09-12,,139,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151333344,4/125 Raglan Street,Mosman,2088,Apartment,2.0,1,,,990000,2026-07-07,Unknown,,,2026-09-12,,139,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151263404,22/96 Ourimbah Road,Mosman,2088,Apartment,2.0,1,1.0,,1025000,2026-07-03,Unknown,,,2026-09-12,102.2,135,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151139368,31/2B Brady Street,Mosman,2088,Apartment,3.0,2,2.0,,1925000,2026-06-29,Unknown,,,2026-09-12,,131,6,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151376824,5B/699 Military Road,Mosman,2088,Apartment,2.0,1,1.0,,1450000,2026-06-17,Unknown,,,2026-09-12,101.0,119,6,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151410080,2/184 Raglan Street,Mosman,2088,Apartment,2.0,1,1.0,,1237500,2026-06-17,Unknown,,,2026-09-12,,119,6,0.5
-https://www.realestate.com.au/sold/property-townhouse-nsw-mosman-150433716,10/116 Belmont Road,Mosman,2088,Townhouse,3.0,2,2.0,192.0,2380000,2026-06-10,Unknown,,,2026-09-12,,112,6,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151137084,16/5 The Esplanade,Mosman,2088,Apartment,1.0,1,1.0,,1570000,2026-06-06,Unknown,,,2026-09-12,,108,6,1.0
-https://www.realestate.com.au/sold/property-house-nsw-mosman-151124468,105 Holt Avenue,Mosman,2088,House,4.0,3,,,3550000,2026-06-05,Unknown,,,2026-09-12,,107,6,0.75
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150626336,3/1A Oswald Street,Mosman,2088,Apartment,2.0,1,,,1140000,2026-06-04,Unknown,,,2026-09-12,,106,6,0.5
-https://www.realestate.com.au/sold/property-house-nsw-mosman-150415760,96 Glover Street,Mosman,2088,House,4.0,3,2.0,379.0,3390000,2026-06-02,Unknown,,,2026-09-12,,104,6,0.75
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151336940,17/22 Mosman Street,Mosman,2088,Apartment,1.0,1,1.0,,827000,2026-06-01,Unknown,,,2026-09-12,,103,6,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-148836792,28 (Lot 27/9 Mandolong Road,Mosman,2088,Apartment,1.0,1,,,800000,2026-05-29,Unknown,,,2026-09-12,40.0,100,5,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150833140,12/22 Warringah Road,Mosman,2088,Apartment,1.0,1,1.0,,1030000,2026-05-26,Unknown,,,2026-09-12,,97,5,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150833828,32B/2 Brady Street,Mosman,2088,Apartment,2.0,2,2.0,,2000000,2026-05-19,Unknown,,,2026-09-12,154.0,90,5,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-149969460,7/8 Earl Street,Mosman,2088,Apartment,3.0,2,2.0,,3000000,2026-05-15,Unknown,,,2026-09-12,156.0,86,5,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150495412,27/102 Spit Road,Mosman,2088,Apartment,1.0,1,1.0,,765000,2026-05-15,Unknown,,,2026-09-12,,86,5,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150960364,2/7 Badham Avenue,Mosman,2088,Apartment,2.0,1,,,1265000,2026-05-13,Unknown,,,2026-09-12,67.0,84,5,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150506028,13/68 Bradleys Head Road,Mosman,2088,Apartment,1.0,1,,,750000,2026-05-13,Unknown,,,2026-09-12,,84,5,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150379492,24/27 Warringah Road,Mosman,2088,Apartment,1.0,1,1.0,,788000,2026-04-23,Unknown,,,2026-09-12,,64,4,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150616400,9/237 Raglan Street,Mosman,2088,Apartment,1.0,1,1.0,,1500000,2026-04-16,Unknown,,,2026-09-12,37.0,57,4,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-149396024,11/1A Queen Street,Mosman,2088,Apartment,2.0,1,1.0,,1325000,2026-04-16,Unknown,,,2026-09-12,,57,4,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150727204,6/16 Bardwell Road,Mosman,2088,Apartment,2.0,2,1.0,,1325000,2026-04-16,Unknown,,,2026-09-12,116.0,57,4,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150266228,18/174 Spit Road,Mosman,2088,Apartment,2.0,1,1.0,,1195000,2026-04-12,Unknown,,,2026-09-12,,53,4,0.5
-https://www.realestate.com.au/sold/property-house-nsw-mosman-150578600,14 Erith Street,Mosman,2088,House,4.0,3,1.0,613.0,5300000,2026-04-11,Unknown,,,2026-09-12,,52,4,0.75
-https://www.realestate.com.au/sold/property-house-nsw-mosman-150578988,130 Cowles Road,Mosman,2088,House,5.0,2,1.0,,4200000,2026-04-11,Unknown,,,2026-09-12,,52,4,0.4
-https://www.realestate.com.au/sold/property-unit-nsw-mosman-150696876,3/3 Millett Road,Mosman,2088,Unit,1.0,1,,,740000,2026-04-09,Unknown,,,2026-09-12,58.0,50,4,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150438556,312/88 Vista Street,Mosman,2088,Apartment,1.0,1,,,721000,2026-04-08,Unknown,,,2026-09-12,,49,4,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150698636,28/182 Raglan Street,Mosman,2088,Apartment,2.0,1,1.0,,1800000,2026-04-04,Unknown,,,2026-09-12,,45,4,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150640504,12/68 Bradleys Head Road,Mosman,2088,Apartment,2.0,1,,,1100000,2026-04-02,Unknown,,,2026-09-12,,43,4,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150576004,8/4 Mandolong Road,Mosman,2088,Apartment,2.0,1,1.0,,1405000,2026-04-01,Unknown,,,2026-09-12,101.0,42,4,0.5
-https://www.realestate.com.au/sold/property-house-nsw-mosman-149267976,17 Morella Road,Mosman,2088,House,4.0,3,2.0,961.1,23000000,2026-03-31,Unknown,,,2026-09-12,,41,3,0.75
-https://www.realestate.com.au/sold/property-house-nsw-mosman-150084608,34 Rickard Avenue,Mosman,2088,House,7.0,3,2.0,,9000000,2026-03-27,Unknown,,,2026-09-12,,37,3,0.42857142857142855
-https://www.realestate.com.au/sold/property-house-nsw-mosman-150397796,10 Cyprian Street,Mosman,2088,House,4.0,3,2.0,556.4,8500000,2026-03-27,Unknown,,,2026-09-12,,37,3,0.75
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-149969284,2/732 Military Road,Mosman,2088,Apartment,1.0,1,1.0,,1050000,2026-03-27,Unknown,,,2026-09-12,,37,3,1.0
-https://www.realestate.com.au/sold/property-house-nsw-mosman-149519784,29 Pearl Bay Avenue,Mosman,2088,House,4.0,3,3.0,,7198000,2026-03-20,Unknown,,,2026-09-12,,30,3,0.75
-https://www.realestate.com.au/sold/property-unit-nsw-mosman-150000160,13/560 Military Road,Mosman,2088,Unit,2.0,1,1.0,,1037000,2026-03-19,Unknown,,,2026-09-12,105.0,29,3,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150255660,15/98 Ourimbah Road,Mosman,2088,Apartment,2.0,1,1.0,,1040000,2026-03-12,Unknown,,,2026-09-12,,22,3,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150487400,7/10 Raglan Street,Mosman,2088,Apartment,1.0,1,,,710000,2026-03-11,Unknown,,,2026-09-12,,21,3,1.0
-https://www.realestate.com.au/sold/property-house-nsw-mosman-150200956,31 Ryrie Street,Mosman,2088,House,5.0,3,2.0,624.0,3900000,2026-03-07,Unknown,,,2026-09-12,,17,3,0.6
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150282916,16/182 Raglan Street,Mosman,2088,Apartment,2.0,1,1.0,,1610000,2026-03-07,Unknown,,,2026-09-12,,17,3,0.5
-https://www.realestate.com.au/sold/property-house-nsw-mosman-150128256,53 Clanalpine Street,Mosman,2088,House,5.0,5,4.0,511.0,7700000,2026-03-06,Unknown,,,2026-09-12,,16,3,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150166172,1/8 Muston Street,Mosman,2088,Apartment,2.0,1,1.0,,1300000,2026-03-06,Unknown,,,2026-09-12,,16,3,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150344092,17/6 Clifford Street,Mosman,2088,Apartment,1.0,1,,,672000,2026-03-05,Unknown,,,2026-09-12,,15,3,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150360080,5/100 Avenue Road,Mosman,2088,Apartment,1.0,1,,,660000,2026-03-04,Unknown,,,2026-09-12,,14,3,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150251784,2/30 Warringah Road,Mosman,2088,Apartment,2.0,1,1.0,,1100000,2026-03-03,Unknown,,,2026-09-12,101.3,13,3,0.5
-https://www.realestate.com.au/sold/property-house-nsw-mosman-148344104,33 Spofforth Street,Mosman,2088,House,4.0,3,3.0,,5075000,2026-03-02,Unknown,,,2026-09-12,,12,3,0.75
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150108356,203/171-179 Avenue Road,Mosman,2088,Apartment,3.0,2,3.0,,4450000,2026-03-01,Unknown,,,2026-09-12,,11,3,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150128988,15/5 The Esplanade,Mosman,2088,Apartment,2.0,1,1.0,,1950000,2026-02-28,Unknown,,,2026-09-12,,10,2,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150129332,9/48 Middle Head Road,Mosman,2088,Apartment,1.0,1,1.0,,862000,2026-02-28,Unknown,,,2026-09-12,,10,2,1.0
-https://www.realestate.com.au/sold/property-house-nsw-mosman-150278904,1 Bray Street,Mosman,2088,House,3.0,2,1.0,296.0,3750000,2026-02-27,Unknown,,,2026-09-12,,9,2,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-149189124,5/53 Prince Albert Street,Mosman,2088,Apartment,3.0,2,1.0,,2400000,2026-02-27,Unknown,,,2026-09-12,,9,2,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150283504,3/46A Moruben Road,Mosman,2088,Apartment,2.0,1,1.0,,2030800,2026-02-27,Unknown,,,2026-09-12,,9,2,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150205572,310/55 Harbour Street,Mosman,2088,Apartment,1.0,1,1.0,,1065000,2026-02-27,Unknown,,,2026-09-12,,9,2,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-149994628,406/88 Vista Street,Mosman,2088,Apartment,1.0,1,1.0,,875000,2026-02-26,Unknown,,,2026-09-12,,8,2,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150136912,13/56 Harbour Street,Mosman,2088,Apartment,1.0,1,1.0,,1150000,2026-02-20,Unknown,,,2026-09-12,,2,2,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150208984,17/98 Ourimbah Road,Mosman,2088,Apartment,2.0,1,1.0,,1125000,2026-02-20,Unknown,,,2026-09-12,,2,2,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150114112,3/70-72 Muston Street,Mosman,2088,Apartment,3.0,2,2.0,,4100000,2026-02-19,Unknown,,,2026-09-12,172.0,1,2,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-mosman-149145924,1D/74 Prince Street,Mosman,2088,Apartment,2.0,1,1.0,,1000000,2026-02-18,Unknown,,,2026-09-12,,0,2,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-152003760,2/16 Betts Street,Parramatta,2150,Apartment,2.0,1,1.0,,660000,2026-09-12,Private treaty,,,2026-09-12,,206,9,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151592404,33/68 Great Western Highway,Parramatta,2150,Apartment,2.0,1,1.0,,520000,2026-09-11,Private treaty,,,2026-09-12,116.0,205,9,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150842492,505/23 Hassall Street,Parramatta,2150,Apartment,2.0,2,1.0,,660000,2026-09-09,Private treaty,,,2026-09-12,122.0,203,9,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150509384,1702/45 Macquarie Street,Parramatta,2150,Apartment,2.0,2,1.0,,705000,2026-09-04,Private treaty,,,2026-09-12,,198,9,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-149706980,89/459-463 Church Street,Parramatta,2150,Apartment,2.0,2,1.0,,580000,2026-09-04,Private treaty,,,2026-09-12,136.0,198,9,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-152041592,8/64-66 Great Western Highway,Parramatta,2150,Apartment,1.0,1,1.0,,425000,2026-09-04,Private treaty,,,2026-09-12,,198,9,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151028024,10/4 Peace Lane,Parramatta,2150,Apartment,2.0,2,1.0,,570000,2026-09-03,Private treaty,,,2026-09-12,108.0,197,9,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-parramatta-152000252,1/18 Early Street,Parramatta,2150,Unit,2.0,1,1.0,,546000,2026-09-01,Unknown,,,2026-09-12,123.0,195,9,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-152037172,9/178 George Street,Parramatta,2150,Apartment,1.0,1,,,490000,2026-09-01,Private treaty,,,2026-09-12,93.0,195,9,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-parramatta-152083100,17/10-12 Thomas Street,Parramatta,2150,Unit,2.0,1,1.0,,650000,2026-08-31,Private treaty,,,2026-09-12,,194,8,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151176568,3/23 Good Street,Parramatta,2150,Unit,2.0,1,1.0,,569000,2026-08-31,Private treaty,,,2026-09-12,104.0,194,8,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151624544,401/6 River Road West,Parramatta,2150,Apartment,2.0,2,1.0,,540000,2026-08-30,Private treaty,,,2026-09-12,108.0,193,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151649792,5/30-32 Queens Avenue,Parramatta,2150,Apartment,2.0,1,1.0,,680000,2026-08-28,Private treaty,,,2026-09-12,,191,8,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151527340,11/32 Hassall Street,Parramatta,2150,Apartment,2.0,2,1.0,,590000,2026-08-28,Private treaty,,,2026-09-12,,191,8,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151576280,C26/88-98 Marsden Street,Parramatta,2150,Unit,2.0,2,1.0,,552000,2026-08-27,Private treaty,,,2026-09-12,,190,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150473796,15/1 Good Street,Parramatta,2150,Apartment,2.0,1,1.0,,480000,2026-08-27,Private treaty,,,2026-09-12,,190,8,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151973256,907/6-10 Charles Street,Parramatta,2150,Apartment,3.0,2,1.0,,720000,2026-08-25,Private treaty,,,2026-09-12,189.0,188,8,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151893972,D603/1 Broughton Street,Parramatta,2150,Apartment,2.0,2,1.0,,680000,2026-08-25,Private treaty,,,2026-09-12,,188,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-149992300,1417/32 Hunter Street (AKA 1417/45 Macquarie St),Parramatta,2150,Apartment,1.0,1,1.0,,560000,2026-08-25,Private treaty,,,2026-09-12,76.0,188,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151956248,16L/15 Campbell Street,Parramatta,2150,Apartment,1.0,1,1.0,,405000,2026-08-25,Auction,,,2026-09-12,,188,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150177508,805/21 Hassall Street,Parramatta,2150,Apartment,1.0,1,,,410000,2026-08-24,Private treaty,,,2026-09-12,,187,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151713296,1502/88 Church Street,Parramatta,2150,Apartment,2.0,2,1.0,,800000,2026-08-21,Private treaty,,,2026-09-12,,184,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151643420,41/3 Good Street,Parramatta,2150,Apartment,2.0,2,1.0,,641000,2026-08-21,Private treaty,,,2026-09-12,132.0,184,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151458016,219/88 Church Street,Parramatta,2150,Apartment,1.0,1,1.0,,600000,2026-08-21,Private treaty,,,2026-09-12,72.0,184,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150842684,401/8 River Road,Parramatta,2150,Apartment,2.0,2,1.0,,550000,2026-08-21,Unknown,,,2026-09-12,,184,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150736304,11/22-24 Tennyson Street,Parramatta,2150,Apartment,2.0,2,1.0,,650000,2026-08-17,Private treaty,,,2026-09-12,,180,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151449756,53/20 Victoria Road,Parramatta,2150,Apartment,2.0,2,1.0,,640000,2026-08-13,Private treaty,,,2026-09-12,122.0,176,8,1.0
-https://www.realestate.com.au/sold/property-townhouse-nsw-parramatta-151891468,2/1-7 Bobart Street,Parramatta,2150,Townhouse,2.0,1,1.0,251.0,780000,2026-08-12,Auction,,,2026-09-12,,175,8,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151815704,3637/180 George Street,Parramatta,2150,Apartment,1.0,1,,,623000,2026-08-12,Private treaty,,,2026-09-12,,175,8,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151912828,5/5 Thomas Street,Parramatta,2150,Unit,2.0,1,1.0,,530000,2026-08-12,Private treaty,,,2026-09-12,81.0,175,8,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151435964,3/11 O'Reilly Street,Parramatta,2150,Unit,2.0,2,1.0,,657000,2026-08-11,Unknown,,,2026-09-12,145.0,174,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150227964,1001/1A Morton Street,Parramatta,2150,Apartment,2.0,2,1.0,,635000,2026-08-07,Unknown,,,2026-09-12,127.0,170,8,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151700640,4/39 Great Western Highway,Parramatta,2150,Unit,2.0,1,1.0,,560000,2026-08-07,Unknown,,,2026-09-12,,170,8,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151516112,5/13 Queens Avenue,Parramatta,2150,Apartment,1.0,1,1.0,,435000,2026-08-07,Unknown,,,2026-09-12,,170,8,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151414292,902/22 Charles Street,Parramatta,2150,Unit,1.0,1,1.0,,400000,2026-08-07,Unknown,,,2026-09-12,81.0,170,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151176520,404/23 Hassall Street,Parramatta,2150,Apartment,2.0,2,1.0,,680000,2026-08-04,Unknown,,,2026-09-12,124.0,167,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151782036,2/15-19 Early Street,Parramatta,2150,Apartment,2.0,1,1.0,,588000,2026-08-04,Unknown,,,2026-09-12,150.0,167,8,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150811748,214/354-366 Church Street,Parramatta,2150,Apartment,1.0,1,,,497000,2026-08-03,Unknown,,,2026-09-12,,166,8,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-parramatta-148720200,412/31 Hassall Street,Parramatta,2150,Unit,1.0,1,1.0,,432000,2026-08-03,Unknown,,,2026-09-12,,166,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151392796,3001/11 Hassall St,Parramatta,2150,Apartment,2.0,2,1.0,,740000,2026-08-02,Unknown,,,2026-09-12,,165,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151397752,1/6 Sorrell St,Parramatta,2150,Apartment,3.0,2,2.0,,805000,2026-07-31,Unknown,,,2026-09-12,157.0,163,7,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150682068,12/37 Fennell Street,Parramatta,2150,Apartment,3.0,1,1.0,,695000,2026-07-31,Unknown,,,2026-09-12,,163,7,0.3333333333333333
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151786980,D201/1 Broughton Street,Parramatta,2150,Apartment,1.0,1,1.0,,530000,2026-07-31,Unknown,,,2026-09-12,79.0,163,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151837448,16/18 Thomas St,Parramatta,2150,Apartment,2.0,1,1.0,,626000,2026-07-30,Unknown,,,2026-09-12,,162,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151631376,4/13 Henry Street,Parramatta,2150,Apartment,2.0,1,1.0,,580000,2026-07-30,Unknown,,,2026-09-12,,162,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151104612,907/29 Hunter Street,Parramatta,2150,Apartment,2.0,2,1.0,,555000,2026-07-29,Unknown,,,2026-09-12,,161,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151764748,34/105-107 Church Street,Parramatta,2150,Apartment,2.0,2,1.0,,625000,2026-07-28,Unknown,,,2026-09-12,,160,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151713748,3/22-24 Thomas Street,Parramatta,2150,Apartment,2.0,1,2.0,,667000,2026-07-27,Unknown,,,2026-09-12,122.0,159,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151669176,1330K/2 Morton Street,Parramatta,2150,Apartment,2.0,2,1.0,,740000,2026-07-25,Unknown,,,2026-09-12,,157,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151643160,15/7-11 Elizabeth Street,Parramatta,2150,Apartment,2.0,1,1.0,,650000,2026-07-25,Unknown,,,2026-09-12,112.0,157,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151688016,28/24 Campbell Street,Parramatta,2150,Apartment,2.0,2,1.0,,500000,2026-07-25,Unknown,,,2026-09-12,,157,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151730968,27/9-11 Cowper Street,Parramatta,2150,Apartment,3.0,2,2.0,,800000,2026-07-23,Unknown,,,2026-09-12,149.0,155,7,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151646944,10/15-17 Queens Avenue,Parramatta,2150,Apartment,2.0,1,1.0,,615000,2026-07-22,Unknown,,,2026-09-12,,154,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151324380,12/128 Macquarie Street,Parramatta,2150,Apartment,2.0,1,2.0,,532000,2026-07-22,Unknown,,,2026-09-12,136.0,154,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150895472,6/89 Great Western Highway,Parramatta,2150,Apartment,2.0,1,1.0,,460000,2026-07-22,Unknown,,,2026-09-12,,154,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150907148,44/20-24 Sorrell Street,Parramatta,2150,Apartment,3.0,2,1.0,,825000,2026-07-21,Unknown,,,2026-09-12,192.0,153,7,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151592008,42/21 Sorrell Street,Parramatta,2150,Apartment,3.0,2,1.0,,665000,2026-07-21,Unknown,,,2026-09-12,,153,7,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150904076,80/68 MacArthur Street,Parramatta,2150,Apartment,2.0,1,2.0,,583000,2026-07-21,Unknown,,,2026-09-12,111.0,153,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150676540,1/32 Hassall Street,Parramatta,2150,Apartment,1.0,1,,,350000,2026-07-21,Unknown,,,2026-09-12,54.0,153,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150736888,35/26-30 Hassall Street,Parramatta,2150,Apartment,2.0,2,1.0,,580000,2026-07-20,Unknown,,,2026-09-12,,152,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151535112,20/4 Peace Lane,Parramatta,2150,Apartment,2.0,1,1.0,,425000,2026-07-19,Unknown,,,2026-09-12,,151,7,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151582864,11/27-29 Early Street,Parramatta,2150,Unit,2.0,1,1.0,,530000,2026-07-17,Unknown,,,2026-09-12,97.0,149,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150549432,804/140 Church Street,Parramatta,2150,Apartment,2.0,2,1.0,,660000,2026-07-16,Unknown,,,2026-09-12,,148,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151195168,102/2-4 Amos Street,Parramatta,2150,Apartment,2.0,2,1.0,,660000,2026-07-16,Unknown,,,2026-09-12,115.0,148,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151042124,2102/12 Phillip Street,Parramatta,2150,Apartment,2.0,1,1.0,,780000,2026-07-15,Unknown,,,2026-09-12,,147,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151206472,F328/1 Broughton Street,Parramatta,2150,Apartment,2.0,2,1.0,,720000,2026-07-10,Unknown,,,2026-09-12,126.0,142,7,1.0
-https://www.realestate.com.au/sold/property-villa-nsw-parramatta-151406168,6/50 Morton Street,Parramatta,2150,Villa,2.0,2,1.0,,850000,2026-07-07,Unknown,,,2026-09-12,,139,7,1.0
-https://www.realestate.com.au/sold/property-house-nsw-liverpool-151930956,41 Tully Avenue,Liverpool,2170,House,6.0,2,2.0,588.1,1150000,2026-09-11,Private treaty,,,2026-09-12,,205,9,0.3333333333333333
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-152048988,501/311 Hume Highway,Liverpool,2170,Unit,2.0,2,1.0,,600000,2026-09-11,Private treaty,,,2026-09-12,,205,9,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-152087256,505/17 Shepherd Street,Liverpool,2170,Unit,2.0,2,1.0,,570000,2026-09-11,Private treaty,,,2026-09-12,131.0,205,9,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151680820,202/21 Atkinson Street,Liverpool,2170,Apartment,2.0,2,1.0,,530000,2026-09-11,Unknown,,,2026-09-12,106.0,205,9,1.0
-https://www.realestate.com.au/sold/property-townhouse-nsw-liverpool-151601540,3/1 Stanton Street,Liverpool,2170,Townhouse,3.0,1,1.0,178.0,770000,2026-09-03,Private treaty,,,2026-09-12,,197,9,0.3333333333333333
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151934628,308/6B Atkinson Street,Liverpool,2170,Apartment,1.0,1,1.0,,412000,2026-08-31,Unknown,,,2026-09-12,84.0,194,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151703084,42/87-91 Campbell Street,Liverpool,2170,Apartment,1.0,1,1.0,,410000,2026-08-28,Unknown,,,2026-09-12,,191,8,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151946852,9/53 Goulburn Street,Liverpool,2170,Unit,2.0,1,1.0,,423000,2026-08-27,Private treaty,,,2026-09-12,,190,8,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-150811780,503/311 Hume Highway,Liverpool,2170,Apartment,2.0,2,1.0,,570000,2026-08-25,Private treaty,,,2026-09-12,,188,8,1.0
-https://www.realestate.com.au/sold/property-townhouse-nsw-liverpool-151890288,4/44-46 Passefield Street,Liverpool,2170,Townhouse,3.0,2,1.0,233.0,875000,2026-08-24,Private treaty,,,2026-09-12,,187,8,0.6666666666666666
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151359976,8/9-11 Bathurst Street,Liverpool,2170,Unit,3.0,1,2.0,,660000,2026-08-24,Unknown,,,2026-09-12,,187,8,0.3333333333333333
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-148855372,1303/30 Shepherd Street,Liverpool,2170,Apartment,2.0,2,1.0,,539000,2026-08-24,Private treaty,,,2026-09-12,106.0,187,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151685284,2/30 Speed Street,Liverpool,2170,Apartment,2.0,1,1.0,,385000,2026-08-24,Private treaty,,,2026-09-12,,187,8,0.5
-https://www.realestate.com.au/sold/property-house-nsw-liverpool-151905060,8 Angelo Avenue,Liverpool,2170,House,3.0,1,1.0,171.0,935000,2026-08-22,Auction,,,2026-09-12,,185,8,0.3333333333333333
-https://www.realestate.com.au/sold/property-house-nsw-liverpool-151716252,5/10 Christie Street,Liverpool,2170,House,3.0,2,1.0,,870000,2026-08-22,Private treaty,,,2026-09-12,,185,8,0.6666666666666666
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151885248,10/50 Castlereagh Street,Liverpool,2170,Unit,2.0,1,1.0,,433000,2026-08-21,Private treaty,,,2026-09-12,,184,8,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151685564,66/387 Macquarie Street,Liverpool,2170,Unit,2.0,2,1.0,,570000,2026-08-19,Private treaty,,,2026-09-12,,182,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151256120,40/387 Macquarie Street,Liverpool,2170,Apartment,1.0,1,1.0,,431000,2026-08-19,Private treaty,,,2026-09-12,,182,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-150616840,B601/17 Shepherd Street,Liverpool,2170,Apartment,2.0,2,1.0,,555000,2026-08-13,Unknown,,,2026-09-12,112.0,176,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151780552,401/21 Charles Street,Liverpool,2170,Apartment,2.0,2,1.0,,550000,2026-08-13,Private treaty,,,2026-09-12,,176,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151540992,20/8 Beale Street,Liverpool,2170,Apartment,2.0,1,1.0,,450000,2026-08-13,Private treaty,,,2026-09-12,102.0,176,8,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151789880,805/311 Hume Highway,Liverpool,2170,Unit,2.0,2,1.0,,610000,2026-08-12,Private treaty,,,2026-09-12,,175,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151096340,2508/311 Hume Highway,Liverpool,2170,Apartment,2.0,2,1.0,,625000,2026-08-11,Private treaty,,,2026-09-12,,174,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151756184,1/58-60 Copeland Street,Liverpool,2170,Apartment,2.0,1,1.0,,412000,2026-08-11,Unknown,,,2026-09-12,,174,8,0.5
-https://www.realestate.com.au/sold/property-townhouse-nsw-liverpool-151751392,1/10 Tobruk Avenue,Liverpool,2170,Townhouse,4.0,3,1.0,241.0,962000,2026-08-10,Auction,,,2026-09-12,,173,8,0.75
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151786164,91/1 Riverpark Drive,Liverpool,2170,Apartment,2.0,1,2.0,,515000,2026-08-10,Private treaty,,,2026-09-12,112.0,173,8,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151340168,1610/32 Shepherd Street,Liverpool,2170,Unit,1.0,1,1.0,,480000,2026-08-10,Unknown,,,2026-09-12,76.0,173,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151722612,8/22 Nagle Street,Liverpool,2170,Apartment,2.0,1,1.0,,420000,2026-08-10,Private treaty,,,2026-09-12,77.0,173,8,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151470836,32/17-19 Speed Street,Liverpool,2170,Apartment,2.0,1,1.0,,385000,2026-08-10,Private treaty,,,2026-09-12,79.0,173,8,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151860000,5/66 Speed Street,Liverpool,2170,Unit,2.0,1,1.0,,350000,2026-08-10,Unknown,,,2026-09-12,,173,8,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151603028,Unit 5/33-35 Bathurst Street,Liverpool,2170,Unit,3.0,2,1.0,,730000,2026-08-07,Private treaty,,,2026-09-12,,170,8,0.6666666666666666
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151478152,G02/15 Bigge Street,Liverpool,2170,Apartment,2.0,2,1.0,,560000,2026-08-06,Private treaty,,,2026-09-12,,169,8,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-150504584,3/62 Castlereagh Street,Liverpool,2170,Apartment,2.0,1,1.0,,505000,2026-08-06,Unknown,,,2026-09-12,,169,8,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151887428,4/26 Speed Street,Liverpool,2170,Unit,2.0,1,1.0,,410000,2026-08-06,Unknown,,,2026-09-12,68.0,169,8,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151000164,15/52 Speed Street,Liverpool,2170,Apartment,2.0,1,1.0,,380000,2026-08-06,Private treaty,,,2026-09-12,74.0,169,8,0.5
-https://www.realestate.com.au/sold/property-house-nsw-liverpool-151515988,45 Birkdale Crescent,Liverpool,2170,House,3.0,1,1.0,557.4,960000,2026-08-03,Unknown,,,2026-09-12,,166,8,0.3333333333333333
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151180392,12/119-121 Castlereagh Street,Liverpool,2170,Apartment,2.0,1,1.0,,460000,2026-07-31,Private treaty,,,2026-09-12,93.0,163,7,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-150894224,15/13 Speed Street,Liverpool,2170,Unit,2.0,1,1.0,,415000,2026-07-31,Private treaty,,,2026-09-12,,163,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151703048,11/26 Goulburn Street,Liverpool,2170,Apartment,1.0,1,1.0,,340000,2026-07-31,Unknown,,,2026-09-12,,163,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151171564,20/22 Speed Street,Liverpool,2170,Apartment,1.0,1,1.0,,300000,2026-07-31,Private treaty,,,2026-09-12,65.0,163,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151822288,31/32 Castlereagh Street,Liverpool,2170,Apartment,1.0,1,1.0,,425000,2026-07-29,Private treaty,,,2026-09-12,,161,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151238316,26/42 Copeland Street,Liverpool,2170,Apartment,2.0,1,1.0,,375000,2026-07-29,Private treaty,,,2026-09-12,,161,7,0.5
-https://www.realestate.com.au/sold/property-house-nsw-liverpool-151712048,9 Anastasio Road,Liverpool,2170,House,3.0,1,2.0,450.0,976000,2026-07-25,Auction,,,2026-09-12,,157,7,0.3333333333333333
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-150604984,12/8-10 Lachlan Street,Liverpool,2170,Unit,2.0,2,1.0,,560000,2026-07-24,Private treaty,,,2026-09-12,114.0,156,7,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151168028,504/21 Atkinson Street,Liverpool,2170,Unit,2.0,2,1.0,,550000,2026-07-24,Private treaty,,,2026-09-12,,156,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-134720182,48/93-95 Campbell Street,Liverpool,2170,Apartment,2.0,2,1.0,,515000,2026-07-22,Unknown,,,2026-09-12,,154,7,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151320836,57/10-16 Castlereagh Street,Liverpool,2170,Unit,3.0,2,2.0,,680000,2026-07-21,Unknown,,,2026-09-12,,153,7,0.6666666666666666
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-150812360,7/74-76 Castlereagh Street,Liverpool,2170,Unit,2.0,2,2.0,,550000,2026-07-21,Unknown,,,2026-09-12,,153,7,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151643700,13/58 Copeland Street,Liverpool,2170,Unit,2.0,1,1.0,,407000,2026-07-21,Unknown,,,2026-09-12,,153,7,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151266728,28/42-44 Copeland Street,Liverpool,2170,Unit,2.0,1,1.0,,380000,2026-07-21,Unknown,,,2026-09-12,,153,7,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151490256,24/81 Memorial Avenue,Liverpool,2170,Unit,1.0,1,1.0,,360000,2026-07-21,Unknown,,,2026-09-12,,153,7,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151703032,19/2 Beale Street,Liverpool,2170,Unit,1.0,1,1.0,,350000,2026-07-20,Unknown,,,2026-09-12,,152,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-150387988,41/7-9 Atkinson Street,Liverpool,2170,Apartment,2.0,1,1.0,,460000,2026-07-18,Unknown,,,2026-09-12,,150,7,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151576456,12/32 Nagle Street,Liverpool,2170,Unit,2.0,1,1.0,,415000,2026-07-17,Unknown,,,2026-09-12,,149,7,0.5
-https://www.realestate.com.au/sold/property-townhouse-nsw-liverpool-151517440,5/2 Calabro Avenue,Liverpool,2170,Townhouse,2.0,1,1.0,,757000,2026-07-16,Private treaty,,,2026-09-12,,148,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151720856,4/12 George Street,Liverpool,2170,Apartment,2.0,2,1.0,,590000,2026-07-16,Unknown,,,2026-09-12,,148,7,1.0
-https://www.realestate.com.au/sold/property-house-nsw-liverpool-150792248,19 Pearce Street,Liverpool,2170,House,4.0,1,3.0,652.0,1270000,2026-07-14,Unknown,,,2026-09-12,,146,7,0.25
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151350072,"Unit 203, 311 Hume Highway",Liverpool,2170,Unit,2.0,2,1.0,,600000,2026-07-14,Unknown,,,2026-09-12,,146,7,1.0
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151645348,3006/420 Macquarie Street,Liverpool,2170,Unit,2.0,2,1.0,,615000,2026-07-13,Unknown,,,2026-09-12,,145,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-150843652,55/26 George Street,Liverpool,2170,Apartment,2.0,1,1.0,,545000,2026-07-10,Private treaty,,,2026-09-12,104.0,142,7,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151269204,10/4-6 Castlereagh Street,Liverpool,2170,Unit,2.0,2,1.0,,525000,2026-07-09,Private treaty,,,2026-09-12,,141,7,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151550716,14/17-19 Speed Street,Liverpool,2170,Apartment,2.0,1,1.0,,393000,2026-07-09,Unknown,,,2026-09-12,80.1,141,7,0.5
-https://www.realestate.com.au/sold/property-house-nsw-liverpool-151152668,30 Danalam Street,Liverpool,2170,House,4.0,1,1.0,727.0,1083000,2026-07-08,Unknown,,,2026-09-12,,140,7,0.25
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151505652,10/84 Campbell Street,Liverpool,2170,Unit,2.0,1,1.0,,538000,2026-07-08,Unknown,,,2026-09-12,,140,7,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-150812008,20/132 Moore Street,Liverpool,2170,Unit,2.0,1,2.0,,510000,2026-07-02,Unknown,,,2026-09-12,,134,7,0.5
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151358920,411/32 Shepherd Street,Liverpool,2170,Apartment,2.0,1,1.0,,485000,2026-06-30,Unknown,,,2026-09-12,79.0,132,6,0.5
-https://www.realestate.com.au/sold/property-unit-nsw-liverpool-150510604,69/24 Lachlan Street,Liverpool,2170,Unit,2.0,2,1.0,,555000,2026-06-24,Unknown,,,2026-09-12,126.0,126,6,1.0
-https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151232124,2/15-17 Castlereagh Street,Liverpool,2170,Apartment,2.0,2,1.0,,530000,2026-06-24,Unknown,,,2026-09-12,,126,6,1.0
-https://www.realestate.com.au/sold/property-townhouse-nsw-liverpool-151379288,14/2 Calabro Avenue,Liverpool,2170,Townhouse,2.0,1,1.0,,779000,2026-06-22,Unknown,,,2026-09-12,,124,6,0.5
-https://www.domain.com.au/6-139-153-middle-head-road-mosman-nsw-2088-2021035788,6/139-153 Middle Head Road,Mosman,2088,Apartment,3.0,2,2.0,,2558000,2026-08-13,Private treaty,,,2026-09-12,,176,8,0.6666666666666666
-https://www.domain.com.au/6-40-raglan-street-mosman-nsw-2088-2020977668,6/40 Raglan Street,Mosman,2088,Apartment,2.0,1,1.0,,1600000,2026-07-27,Private treaty,,,2026-09-12,103.0,159,7,0.5
-https://www.domain.com.au/10-16-avenue-road-mosman-nsw-2088-2020659268,10/16 Avenue Road,Mosman,2088,Apartment,2.0,1,,,892000,2026-07-20,Private treaty,,,2026-09-12,80.0,152,7,0.5
-https://www.domain.com.au/1-128-130-avenue-road-mosman-nsw-2088-2020877773,1/128-130 Avenue Road,Mosman,2088,Apartment,2.0,1,1.0,,1415000,2026-07-14,Auction,,,2026-09-12,,146,7,0.5
-https://www.domain.com.au/1404-1-3-valentine-avenue-parramatta-nsw-2150-2021149469,1404/1-3 Valentine Avenue,Parramatta,2150,Apartment,1.0,1,,,320000,2026-09-11,Private treaty,,,2026-09-12,,205,9,1.0
-https://www.domain.com.au/108-125-129-arthur-street-parramatta-nsw-2150-2021092190,108/125-129 Arthur Street,Parramatta,2150,Apartment,2.0,1,1.0,,653000,2026-08-21,Private treaty,,,2026-09-12,,184,8,0.5
-https://www.domain.com.au/138-railway-st-parramatta-nsw-2150-2021075447,138 Railway St,Parramatta,2150,Townhouse,2.0,1,1.0,,685000,2026-08-14,Private treaty,,,2026-09-12,,177,8,0.5
-https://www.domain.com.au/6-16-18-mainsbridge-avenue-liverpool-nsw-2170-2021087249,6/16-18 Mainsbridge Avenue,Liverpool,2170,Townhouse,2.0,2,1.0,,720000,2026-08-29,Private treaty,,,2026-09-12,,192,8,1.0
-https://www.domain.com.au/35-12-20-lachlan-street-liverpool-nsw-2170-2021064575,35/12-20 Lachlan Street,Liverpool,2170,Apartment,3.0,2,2.0,,730000,2026-08-28,Private treaty,,,2026-09-12,157.0,191,8,0.6666666666666666
-https://www.domain.com.au/1-34-goulburn-street-liverpool-nsw-2170-2020889734,1/34 Goulburn Street,Liverpool,2170,Apartment,2.0,1,1.0,,390000,2026-08-20,Private treaty,,,2026-09-12,,183,8,0.5
-https://www.domain.com.au/1-13-15-flowerdale-road-liverpool-nsw-2170-2021057642,1/13-15 Flowerdale Road,Liverpool,2170,Townhouse,3.0,2,1.0,,990000,2026-08-06,Private treaty,,,2026-09-12,,169,8,0.6666666666666666
-https://www.domain.com.au/2-16-18-mainsbridge-avenue-liverpool-nsw-2170-2020970669,2/16-18 Mainsbridge Avenue,Liverpool,2170,Townhouse,2.0,2,1.0,,725000,2026-08-06,Private treaty,,,2026-09-12,,169,8,1.0
-https://www.domain.com.au/4-81-memorial-avenue-liverpool-nsw-2170-2021080163,4/81 Memorial Avenue,Liverpool,2170,Apartment,2.0,1,1.0,,435000,2026-07-29,Private treaty,,,2026-09-12,,161,7,0.5
-https://www.domain.com.au/6-8-collimore-avenue-liverpool-nsw-2170-2020945066,6/8 Collimore Avenue,Liverpool,2170,Apartment,2.0,1,1.0,,390000,2026-07-24,Private treaty,,,2026-09-12,82.0,156,7,0.5
-https://www.domain.com.au/401-30-castlereagh-street-liverpool-nsw-2170-2020730003,401/30 Castlereagh Street,Liverpool,2170,Apartment,2.0,2,1.0,,615000,2026-07-21,Private treaty,,,2026-09-12,,153,7,1.0
-https://www.domain.com.au/5-64-copeland-street-liverpool-nsw-2170-2021075036,5/64 Copeland Street,Liverpool,2170,Apartment,2.0,1,1.0,,390000,2026-07-21,Private treaty,,,2026-09-12,,153,7,0.5
-https://www.domain.com.au/22-33-39-lachlan-street-liverpool-nsw-2170-2020611728,22/33-39 Lachlan Street,Liverpool,2170,Apartment,2.0,1,1.0,,500000,2026-07-14,Private treaty,,,2026-09-12,,146,7,0.5
-https://www.domain.com.au/20-apex-street-liverpool-nsw-2170-2020935632,20 Apex Street,Liverpool,2170,House,3.0,1,1.0,853.0,1300000,2026-07-13,Private treaty,,,2026-09-12,,145,7,0.3333333333333333
+listing_url,address,suburb,postcode,property_type,bedrooms,bathrooms,parking_spaces,land_size_sqm,floor_area_sqm,year_built,sale_price,sale_date,sale_method,agent_description,features_list,date_collected,description_length,mentions_pool,mentions_view,mentions_renovation,property_age,bath_per_bed,days_since_first_sale
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-152106856,8/88 Avenue Road,Mosman,2088,Apartment,1.0,1,1.0,,,,730000,2026-09-12,Private treaty,,,2026-09-12,,,,,,1.0,206
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-152160876,7/10 Muston Street,Mosman,2088,Apartment,1.0,1,,,,,750000,2026-09-08,Private treaty,,,2026-09-12,,,,,,1.0,202
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151967096,13/5 The Esplanade,Mosman,2088,Apartment,1.0,1,,,,,1450000,2026-09-03,Private treaty,,,2026-09-12,,,,,,1.0,197
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151988036,G05/15-25 Myahgah Road,Mosman,2088,Apartment,2.0,2,2.0,,,,4500000,2026-08-31,Unknown,,,2026-09-12,,,,,,1.0,194
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151579300,3/17 Milner Street,Mosman,2088,Apartment,1.0,1,,,,,790000,2026-08-21,Private treaty,,,2026-09-12,,,,,,1.0,184
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151841804,111/116 Belmont Road,Mosman,2088,Apartment,1.0,1,1.0,,74.0,,930000,2026-08-19,Private treaty,,,2026-09-12,,,,,,1.0,182
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151781284,4/139-153 Middle Head Road,Mosman,2088,Apartment,3.0,2,2.0,,,,2600000,2026-08-14,Private treaty,,,2026-09-12,,,,,,0.6666666666666666,177
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151600636,14/669 Military Road,Mosman,2088,Apartment,2.0,1,1.0,,96.0,,1600000,2026-08-12,Private treaty,,,2026-09-12,,,,,,0.5,175
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151799252,9/71 Avenue Road,Mosman,2088,Apartment,1.0,1,1.0,,,,700000,2026-08-10,Private treaty,,,2026-09-12,,,,,,1.0,173
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151332820,3/6 Brierley Street,Mosman,2088,Apartment,2.0,1,,,,,975000,2026-08-04,Private treaty,,,2026-09-12,,,,,,0.5,167
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151728984,11/23 Warringah Road,Mosman,2088,Apartment,1.0,1,1.0,,,,865000,2026-07-31,Private treaty,,,2026-09-12,,,,,,1.0,163
+https://www.realestate.com.au/sold/property-house-nsw-mosman-150195184,5 Botanic Road,Mosman,2088,House,4.0,3,2.0,,,,8700000,2026-07-22,Private treaty,,,2026-09-12,,,,,,0.75,154
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151449168,8/6 Punch Street,Mosman,2088,Apartment,1.0,1,,,,,700000,2026-07-20,Unknown,,,2026-09-12,,,,,,1.0,152
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151472668,4/3 Millett Road,Mosman,2088,Apartment,2.0,1,1.0,,,,1050000,2026-07-16,Private treaty,,,2026-09-12,,,,,,0.5,148
+https://www.realestate.com.au/sold/property-unit-nsw-mosman-151380692,7/154 Raglan Street,Mosman,2088,Unit,1.0,1,1.0,,,,785000,2026-07-14,Private treaty,,,2026-09-12,,,,,,1.0,146
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151578736,20/96 Ourimbah Road,Mosman,2088,Apartment,2.0,1,1.0,,,,1030000,2026-07-07,Unknown,,,2026-09-12,,,,,,0.5,139
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151333344,4/125 Raglan Street,Mosman,2088,Apartment,2.0,1,,,,,990000,2026-07-07,Unknown,,,2026-09-12,,,,,,0.5,139
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151263404,22/96 Ourimbah Road,Mosman,2088,Apartment,2.0,1,1.0,,102.2,,1025000,2026-07-03,Unknown,,,2026-09-12,,,,,,0.5,135
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151139368,31/2B Brady Street,Mosman,2088,Apartment,3.0,2,2.0,,,,1925000,2026-06-29,Unknown,,,2026-09-12,,,,,,0.6666666666666666,131
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151376824,5B/699 Military Road,Mosman,2088,Apartment,2.0,1,1.0,,101.0,,1450000,2026-06-17,Unknown,,,2026-09-12,,,,,,0.5,119
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151410080,2/184 Raglan Street,Mosman,2088,Apartment,2.0,1,1.0,,,,1237500,2026-06-17,Unknown,,,2026-09-12,,,,,,0.5,119
+https://www.realestate.com.au/sold/property-townhouse-nsw-mosman-150433716,10/116 Belmont Road,Mosman,2088,Townhouse,3.0,2,2.0,192.0,,,2380000,2026-06-10,Unknown,,,2026-09-12,,,,,,0.6666666666666666,112
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151137084,16/5 The Esplanade,Mosman,2088,Apartment,1.0,1,1.0,,,,1570000,2026-06-06,Unknown,,,2026-09-12,,,,,,1.0,108
+https://www.realestate.com.au/sold/property-house-nsw-mosman-151124468,105 Holt Avenue,Mosman,2088,House,4.0,3,,,,,3550000,2026-06-05,Unknown,,,2026-09-12,,,,,,0.75,107
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150626336,3/1A Oswald Street,Mosman,2088,Apartment,2.0,1,,,,,1140000,2026-06-04,Unknown,,,2026-09-12,,,,,,0.5,106
+https://www.realestate.com.au/sold/property-house-nsw-mosman-150415760,96 Glover Street,Mosman,2088,House,4.0,3,2.0,379.0,,,3390000,2026-06-02,Unknown,,,2026-09-12,,,,,,0.75,104
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-151336940,17/22 Mosman Street,Mosman,2088,Apartment,1.0,1,1.0,,,,827000,2026-06-01,Unknown,,,2026-09-12,,,,,,1.0,103
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-148836792,28 (Lot 27/9 Mandolong Road,Mosman,2088,Apartment,1.0,1,,,40.0,,800000,2026-05-29,Unknown,,,2026-09-12,,,,,,1.0,100
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150833140,12/22 Warringah Road,Mosman,2088,Apartment,1.0,1,1.0,,,,1030000,2026-05-26,Unknown,,,2026-09-12,,,,,,1.0,97
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150833828,32B/2 Brady Street,Mosman,2088,Apartment,2.0,2,2.0,,154.0,,2000000,2026-05-19,Unknown,,,2026-09-12,,,,,,1.0,90
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-149969460,7/8 Earl Street,Mosman,2088,Apartment,3.0,2,2.0,,156.0,,3000000,2026-05-15,Unknown,,,2026-09-12,,,,,,0.6666666666666666,86
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150495412,27/102 Spit Road,Mosman,2088,Apartment,1.0,1,1.0,,,,765000,2026-05-15,Unknown,,,2026-09-12,,,,,,1.0,86
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150960364,2/7 Badham Avenue,Mosman,2088,Apartment,2.0,1,,,67.0,,1265000,2026-05-13,Unknown,,,2026-09-12,,,,,,0.5,84
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150506028,13/68 Bradleys Head Road,Mosman,2088,Apartment,1.0,1,,,,,750000,2026-05-13,Unknown,,,2026-09-12,,,,,,1.0,84
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150379492,24/27 Warringah Road,Mosman,2088,Apartment,1.0,1,1.0,,,,788000,2026-04-23,Unknown,,,2026-09-12,,,,,,1.0,64
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150616400,9/237 Raglan Street,Mosman,2088,Apartment,1.0,1,1.0,,37.0,,1500000,2026-04-16,Unknown,,,2026-09-12,,,,,,1.0,57
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-149396024,11/1A Queen Street,Mosman,2088,Apartment,2.0,1,1.0,,,,1325000,2026-04-16,Unknown,,,2026-09-12,,,,,,0.5,57
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150727204,6/16 Bardwell Road,Mosman,2088,Apartment,2.0,2,1.0,,116.0,,1325000,2026-04-16,Unknown,,,2026-09-12,,,,,,1.0,57
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150266228,18/174 Spit Road,Mosman,2088,Apartment,2.0,1,1.0,,,,1195000,2026-04-12,Unknown,,,2026-09-12,,,,,,0.5,53
+https://www.realestate.com.au/sold/property-house-nsw-mosman-150578600,14 Erith Street,Mosman,2088,House,4.0,3,1.0,613.0,,,5300000,2026-04-11,Unknown,,,2026-09-12,,,,,,0.75,52
+https://www.realestate.com.au/sold/property-house-nsw-mosman-150578988,130 Cowles Road,Mosman,2088,House,5.0,2,1.0,,,,4200000,2026-04-11,Unknown,,,2026-09-12,,,,,,0.4,52
+https://www.realestate.com.au/sold/property-unit-nsw-mosman-150696876,3/3 Millett Road,Mosman,2088,Unit,1.0,1,,,58.0,,740000,2026-04-09,Unknown,,,2026-09-12,,,,,,1.0,50
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150438556,312/88 Vista Street,Mosman,2088,Apartment,1.0,1,,,,,721000,2026-04-08,Unknown,,,2026-09-12,,,,,,1.0,49
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150698636,28/182 Raglan Street,Mosman,2088,Apartment,2.0,1,1.0,,,,1800000,2026-04-04,Unknown,,,2026-09-12,,,,,,0.5,45
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150640504,12/68 Bradleys Head Road,Mosman,2088,Apartment,2.0,1,,,,,1100000,2026-04-02,Unknown,,,2026-09-12,,,,,,0.5,43
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150576004,8/4 Mandolong Road,Mosman,2088,Apartment,2.0,1,1.0,,101.0,,1405000,2026-04-01,Unknown,,,2026-09-12,,,,,,0.5,42
+https://www.realestate.com.au/sold/property-house-nsw-mosman-149267976,17 Morella Road,Mosman,2088,House,4.0,3,2.0,961.1,,,23000000,2026-03-31,Unknown,,,2026-09-12,,,,,,0.75,41
+https://www.realestate.com.au/sold/property-house-nsw-mosman-150084608,34 Rickard Avenue,Mosman,2088,House,7.0,3,2.0,,,,9000000,2026-03-27,Unknown,,,2026-09-12,,,,,,0.42857142857142855,37
+https://www.realestate.com.au/sold/property-house-nsw-mosman-150397796,10 Cyprian Street,Mosman,2088,House,4.0,3,2.0,556.4,,,8500000,2026-03-27,Unknown,,,2026-09-12,,,,,,0.75,37
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-149969284,2/732 Military Road,Mosman,2088,Apartment,1.0,1,1.0,,,,1050000,2026-03-27,Unknown,,,2026-09-12,,,,,,1.0,37
+https://www.realestate.com.au/sold/property-house-nsw-mosman-149519784,29 Pearl Bay Avenue,Mosman,2088,House,4.0,3,3.0,,,,7198000,2026-03-20,Unknown,,,2026-09-12,,,,,,0.75,30
+https://www.realestate.com.au/sold/property-unit-nsw-mosman-150000160,13/560 Military Road,Mosman,2088,Unit,2.0,1,1.0,,105.0,,1037000,2026-03-19,Unknown,,,2026-09-12,,,,,,0.5,29
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150255660,15/98 Ourimbah Road,Mosman,2088,Apartment,2.0,1,1.0,,,,1040000,2026-03-12,Unknown,,,2026-09-12,,,,,,0.5,22
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150487400,7/10 Raglan Street,Mosman,2088,Apartment,1.0,1,,,,,710000,2026-03-11,Unknown,,,2026-09-12,,,,,,1.0,21
+https://www.realestate.com.au/sold/property-house-nsw-mosman-150200956,31 Ryrie Street,Mosman,2088,House,5.0,3,2.0,624.0,,,3900000,2026-03-07,Unknown,,,2026-09-12,,,,,,0.6,17
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150282916,16/182 Raglan Street,Mosman,2088,Apartment,2.0,1,1.0,,,,1610000,2026-03-07,Unknown,,,2026-09-12,,,,,,0.5,17
+https://www.realestate.com.au/sold/property-house-nsw-mosman-150128256,53 Clanalpine Street,Mosman,2088,House,5.0,5,4.0,511.0,,,7700000,2026-03-06,Unknown,,,2026-09-12,,,,,,1.0,16
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150166172,1/8 Muston Street,Mosman,2088,Apartment,2.0,1,1.0,,,,1300000,2026-03-06,Unknown,,,2026-09-12,,,,,,0.5,16
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150344092,17/6 Clifford Street,Mosman,2088,Apartment,1.0,1,,,,,672000,2026-03-05,Unknown,,,2026-09-12,,,,,,1.0,15
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150360080,5/100 Avenue Road,Mosman,2088,Apartment,1.0,1,,,,,660000,2026-03-04,Unknown,,,2026-09-12,,,,,,1.0,14
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150251784,2/30 Warringah Road,Mosman,2088,Apartment,2.0,1,1.0,,101.3,,1100000,2026-03-03,Unknown,,,2026-09-12,,,,,,0.5,13
+https://www.realestate.com.au/sold/property-house-nsw-mosman-148344104,33 Spofforth Street,Mosman,2088,House,4.0,3,3.0,,,,5075000,2026-03-02,Unknown,,,2026-09-12,,,,,,0.75,12
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150108356,203/171-179 Avenue Road,Mosman,2088,Apartment,3.0,2,3.0,,,,4450000,2026-03-01,Unknown,,,2026-09-12,,,,,,0.6666666666666666,11
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150128988,15/5 The Esplanade,Mosman,2088,Apartment,2.0,1,1.0,,,,1950000,2026-02-28,Unknown,,,2026-09-12,,,,,,0.5,10
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150129332,9/48 Middle Head Road,Mosman,2088,Apartment,1.0,1,1.0,,,,862000,2026-02-28,Unknown,,,2026-09-12,,,,,,1.0,10
+https://www.realestate.com.au/sold/property-house-nsw-mosman-150278904,1 Bray Street,Mosman,2088,House,3.0,2,1.0,296.0,,,3750000,2026-02-27,Unknown,,,2026-09-12,,,,,,0.6666666666666666,9
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-149189124,5/53 Prince Albert Street,Mosman,2088,Apartment,3.0,2,1.0,,,,2400000,2026-02-27,Unknown,,,2026-09-12,,,,,,0.6666666666666666,9
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150283504,3/46A Moruben Road,Mosman,2088,Apartment,2.0,1,1.0,,,,2030800,2026-02-27,Unknown,,,2026-09-12,,,,,,0.5,9
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150205572,310/55 Harbour Street,Mosman,2088,Apartment,1.0,1,1.0,,,,1065000,2026-02-27,Unknown,,,2026-09-12,,,,,,1.0,9
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-149994628,406/88 Vista Street,Mosman,2088,Apartment,1.0,1,1.0,,,,875000,2026-02-26,Unknown,,,2026-09-12,,,,,,1.0,8
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150136912,13/56 Harbour Street,Mosman,2088,Apartment,1.0,1,1.0,,,,1150000,2026-02-20,Unknown,,,2026-09-12,,,,,,1.0,2
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150208984,17/98 Ourimbah Road,Mosman,2088,Apartment,2.0,1,1.0,,,,1125000,2026-02-20,Unknown,,,2026-09-12,,,,,,0.5,2
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-150114112,3/70-72 Muston Street,Mosman,2088,Apartment,3.0,2,2.0,,172.0,,4100000,2026-02-19,Unknown,,,2026-09-12,,,,,,0.6666666666666666,1
+https://www.realestate.com.au/sold/property-apartment-nsw-mosman-149145924,1D/74 Prince Street,Mosman,2088,Apartment,2.0,1,1.0,,,,1000000,2026-02-18,Unknown,,,2026-09-12,,,,,,0.5,0
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-152003760,2/16 Betts Street,Parramatta,2150,Apartment,2.0,1,1.0,,,,660000,2026-09-12,Private treaty,,,2026-09-12,,,,,,0.5,206
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151592404,33/68 Great Western Highway,Parramatta,2150,Apartment,2.0,1,1.0,,116.0,,520000,2026-09-11,Private treaty,,,2026-09-12,,,,,,0.5,205
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150842492,505/23 Hassall Street,Parramatta,2150,Apartment,2.0,2,1.0,,122.0,,660000,2026-09-09,Private treaty,,,2026-09-12,,,,,,1.0,203
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150509384,1702/45 Macquarie Street,Parramatta,2150,Apartment,2.0,2,1.0,,,,705000,2026-09-04,Private treaty,,,2026-09-12,,,,,,1.0,198
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-149706980,89/459-463 Church Street,Parramatta,2150,Apartment,2.0,2,1.0,,136.0,,580000,2026-09-04,Private treaty,,,2026-09-12,,,,,,1.0,198
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-152041592,8/64-66 Great Western Highway,Parramatta,2150,Apartment,1.0,1,1.0,,,,425000,2026-09-04,Private treaty,,,2026-09-12,,,,,,1.0,198
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151028024,10/4 Peace Lane,Parramatta,2150,Apartment,2.0,2,1.0,,108.0,,570000,2026-09-03,Private treaty,,,2026-09-12,,,,,,1.0,197
+https://www.realestate.com.au/sold/property-unit-nsw-parramatta-152000252,1/18 Early Street,Parramatta,2150,Unit,2.0,1,1.0,,123.0,,546000,2026-09-01,Unknown,,,2026-09-12,,,,,,0.5,195
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-152037172,9/178 George Street,Parramatta,2150,Apartment,1.0,1,,,93.0,,490000,2026-09-01,Private treaty,,,2026-09-12,,,,,,1.0,195
+https://www.realestate.com.au/sold/property-unit-nsw-parramatta-152083100,17/10-12 Thomas Street,Parramatta,2150,Unit,2.0,1,1.0,,,,650000,2026-08-31,Private treaty,,,2026-09-12,,,,,,0.5,194
+https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151176568,3/23 Good Street,Parramatta,2150,Unit,2.0,1,1.0,,104.0,,569000,2026-08-31,Private treaty,,,2026-09-12,,,,,,0.5,194
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151624544,401/6 River Road West,Parramatta,2150,Apartment,2.0,2,1.0,,108.0,,540000,2026-08-30,Private treaty,,,2026-09-12,,,,,,1.0,193
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151649792,5/30-32 Queens Avenue,Parramatta,2150,Apartment,2.0,1,1.0,,,,680000,2026-08-28,Private treaty,,,2026-09-12,,,,,,0.5,191
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151527340,11/32 Hassall Street,Parramatta,2150,Apartment,2.0,2,1.0,,,,590000,2026-08-28,Private treaty,,,2026-09-12,,,,,,1.0,191
+https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151576280,C26/88-98 Marsden Street,Parramatta,2150,Unit,2.0,2,1.0,,,,552000,2026-08-27,Private treaty,,,2026-09-12,,,,,,1.0,190
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150473796,15/1 Good Street,Parramatta,2150,Apartment,2.0,1,1.0,,,,480000,2026-08-27,Private treaty,,,2026-09-12,,,,,,0.5,190
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151973256,907/6-10 Charles Street,Parramatta,2150,Apartment,3.0,2,1.0,,189.0,,720000,2026-08-25,Private treaty,,,2026-09-12,,,,,,0.6666666666666666,188
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151893972,D603/1 Broughton Street,Parramatta,2150,Apartment,2.0,2,1.0,,,,680000,2026-08-25,Private treaty,,,2026-09-12,,,,,,1.0,188
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-149992300,1417/32 Hunter Street (AKA 1417/45 Macquarie St),Parramatta,2150,Apartment,1.0,1,1.0,,76.0,,560000,2026-08-25,Private treaty,,,2026-09-12,,,,,,1.0,188
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151956248,16L/15 Campbell Street,Parramatta,2150,Apartment,1.0,1,1.0,,,,405000,2026-08-25,Auction,,,2026-09-12,,,,,,1.0,188
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150177508,805/21 Hassall Street,Parramatta,2150,Apartment,1.0,1,,,,,410000,2026-08-24,Private treaty,,,2026-09-12,,,,,,1.0,187
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151713296,1502/88 Church Street,Parramatta,2150,Apartment,2.0,2,1.0,,,,800000,2026-08-21,Private treaty,,,2026-09-12,,,,,,1.0,184
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151643420,41/3 Good Street,Parramatta,2150,Apartment,2.0,2,1.0,,132.0,,641000,2026-08-21,Private treaty,,,2026-09-12,,,,,,1.0,184
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151458016,219/88 Church Street,Parramatta,2150,Apartment,1.0,1,1.0,,72.0,,600000,2026-08-21,Private treaty,,,2026-09-12,,,,,,1.0,184
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150842684,401/8 River Road,Parramatta,2150,Apartment,2.0,2,1.0,,,,550000,2026-08-21,Unknown,,,2026-09-12,,,,,,1.0,184
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150736304,11/22-24 Tennyson Street,Parramatta,2150,Apartment,2.0,2,1.0,,,,650000,2026-08-17,Private treaty,,,2026-09-12,,,,,,1.0,180
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151449756,53/20 Victoria Road,Parramatta,2150,Apartment,2.0,2,1.0,,122.0,,640000,2026-08-13,Private treaty,,,2026-09-12,,,,,,1.0,176
+https://www.realestate.com.au/sold/property-townhouse-nsw-parramatta-151891468,2/1-7 Bobart Street,Parramatta,2150,Townhouse,2.0,1,1.0,251.0,,,780000,2026-08-12,Auction,,,2026-09-12,,,,,,0.5,175
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151815704,3637/180 George Street,Parramatta,2150,Apartment,1.0,1,,,,,623000,2026-08-12,Private treaty,,,2026-09-12,,,,,,1.0,175
+https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151912828,5/5 Thomas Street,Parramatta,2150,Unit,2.0,1,1.0,,81.0,,530000,2026-08-12,Private treaty,,,2026-09-12,,,,,,0.5,175
+https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151435964,3/11 O'Reilly Street,Parramatta,2150,Unit,2.0,2,1.0,,145.0,,657000,2026-08-11,Unknown,,,2026-09-12,,,,,,1.0,174
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150227964,1001/1A Morton Street,Parramatta,2150,Apartment,2.0,2,1.0,,127.0,,635000,2026-08-07,Unknown,,,2026-09-12,,,,,,1.0,170
+https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151700640,4/39 Great Western Highway,Parramatta,2150,Unit,2.0,1,1.0,,,,560000,2026-08-07,Unknown,,,2026-09-12,,,,,,0.5,170
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151516112,5/13 Queens Avenue,Parramatta,2150,Apartment,1.0,1,1.0,,,,435000,2026-08-07,Unknown,,,2026-09-12,,,,,,1.0,170
+https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151414292,902/22 Charles Street,Parramatta,2150,Unit,1.0,1,1.0,,81.0,,400000,2026-08-07,Unknown,,,2026-09-12,,,,,,1.0,170
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151176520,404/23 Hassall Street,Parramatta,2150,Apartment,2.0,2,1.0,,124.0,,680000,2026-08-04,Unknown,,,2026-09-12,,,,,,1.0,167
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151782036,2/15-19 Early Street,Parramatta,2150,Apartment,2.0,1,1.0,,150.0,,588000,2026-08-04,Unknown,,,2026-09-12,,,,,,0.5,167
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150811748,214/354-366 Church Street,Parramatta,2150,Apartment,1.0,1,,,,,497000,2026-08-03,Unknown,,,2026-09-12,,,,,,1.0,166
+https://www.realestate.com.au/sold/property-unit-nsw-parramatta-148720200,412/31 Hassall Street,Parramatta,2150,Unit,1.0,1,1.0,,,,432000,2026-08-03,Unknown,,,2026-09-12,,,,,,1.0,166
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151392796,3001/11 Hassall St,Parramatta,2150,Apartment,2.0,2,1.0,,,,740000,2026-08-02,Unknown,,,2026-09-12,,,,,,1.0,165
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151397752,1/6 Sorrell St,Parramatta,2150,Apartment,3.0,2,2.0,,157.0,,805000,2026-07-31,Unknown,,,2026-09-12,,,,,,0.6666666666666666,163
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150682068,12/37 Fennell Street,Parramatta,2150,Apartment,3.0,1,1.0,,,,695000,2026-07-31,Unknown,,,2026-09-12,,,,,,0.3333333333333333,163
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151786980,D201/1 Broughton Street,Parramatta,2150,Apartment,1.0,1,1.0,,79.0,,530000,2026-07-31,Unknown,,,2026-09-12,,,,,,1.0,163
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151837448,16/18 Thomas St,Parramatta,2150,Apartment,2.0,1,1.0,,,,626000,2026-07-30,Unknown,,,2026-09-12,,,,,,0.5,162
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151631376,4/13 Henry Street,Parramatta,2150,Apartment,2.0,1,1.0,,,,580000,2026-07-30,Unknown,,,2026-09-12,,,,,,0.5,162
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151104612,907/29 Hunter Street,Parramatta,2150,Apartment,2.0,2,1.0,,,,555000,2026-07-29,Unknown,,,2026-09-12,,,,,,1.0,161
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151764748,34/105-107 Church Street,Parramatta,2150,Apartment,2.0,2,1.0,,,,625000,2026-07-28,Unknown,,,2026-09-12,,,,,,1.0,160
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151713748,3/22-24 Thomas Street,Parramatta,2150,Apartment,2.0,1,2.0,,122.0,,667000,2026-07-27,Unknown,,,2026-09-12,,,,,,0.5,159
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151669176,1330K/2 Morton Street,Parramatta,2150,Apartment,2.0,2,1.0,,,,740000,2026-07-25,Unknown,,,2026-09-12,,,,,,1.0,157
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151643160,15/7-11 Elizabeth Street,Parramatta,2150,Apartment,2.0,1,1.0,,112.0,,650000,2026-07-25,Unknown,,,2026-09-12,,,,,,0.5,157
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151688016,28/24 Campbell Street,Parramatta,2150,Apartment,2.0,2,1.0,,,,500000,2026-07-25,Unknown,,,2026-09-12,,,,,,1.0,157
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151730968,27/9-11 Cowper Street,Parramatta,2150,Apartment,3.0,2,2.0,,149.0,,800000,2026-07-23,Unknown,,,2026-09-12,,,,,,0.6666666666666666,155
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151646944,10/15-17 Queens Avenue,Parramatta,2150,Apartment,2.0,1,1.0,,,,615000,2026-07-22,Unknown,,,2026-09-12,,,,,,0.5,154
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151324380,12/128 Macquarie Street,Parramatta,2150,Apartment,2.0,1,2.0,,136.0,,532000,2026-07-22,Unknown,,,2026-09-12,,,,,,0.5,154
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150895472,6/89 Great Western Highway,Parramatta,2150,Apartment,2.0,1,1.0,,,,460000,2026-07-22,Unknown,,,2026-09-12,,,,,,0.5,154
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150907148,44/20-24 Sorrell Street,Parramatta,2150,Apartment,3.0,2,1.0,,192.0,,825000,2026-07-21,Unknown,,,2026-09-12,,,,,,0.6666666666666666,153
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151592008,42/21 Sorrell Street,Parramatta,2150,Apartment,3.0,2,1.0,,,,665000,2026-07-21,Unknown,,,2026-09-12,,,,,,0.6666666666666666,153
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150904076,80/68 MacArthur Street,Parramatta,2150,Apartment,2.0,1,2.0,,111.0,,583000,2026-07-21,Unknown,,,2026-09-12,,,,,,0.5,153
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150676540,1/32 Hassall Street,Parramatta,2150,Apartment,1.0,1,,,54.0,,350000,2026-07-21,Unknown,,,2026-09-12,,,,,,1.0,153
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150736888,35/26-30 Hassall Street,Parramatta,2150,Apartment,2.0,2,1.0,,,,580000,2026-07-20,Unknown,,,2026-09-12,,,,,,1.0,152
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151535112,20/4 Peace Lane,Parramatta,2150,Apartment,2.0,1,1.0,,,,425000,2026-07-19,Unknown,,,2026-09-12,,,,,,0.5,151
+https://www.realestate.com.au/sold/property-unit-nsw-parramatta-151582864,11/27-29 Early Street,Parramatta,2150,Unit,2.0,1,1.0,,97.0,,530000,2026-07-17,Unknown,,,2026-09-12,,,,,,0.5,149
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-150549432,804/140 Church Street,Parramatta,2150,Apartment,2.0,2,1.0,,,,660000,2026-07-16,Unknown,,,2026-09-12,,,,,,1.0,148
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151195168,102/2-4 Amos Street,Parramatta,2150,Apartment,2.0,2,1.0,,115.0,,660000,2026-07-16,Unknown,,,2026-09-12,,,,,,1.0,148
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151042124,2102/12 Phillip Street,Parramatta,2150,Apartment,2.0,1,1.0,,,,780000,2026-07-15,Unknown,,,2026-09-12,,,,,,0.5,147
+https://www.realestate.com.au/sold/property-apartment-nsw-parramatta-151206472,F328/1 Broughton Street,Parramatta,2150,Apartment,2.0,2,1.0,,126.0,,720000,2026-07-10,Unknown,,,2026-09-12,,,,,,1.0,142
+https://www.realestate.com.au/sold/property-villa-nsw-parramatta-151406168,6/50 Morton Street,Parramatta,2150,Villa,2.0,2,1.0,,,,850000,2026-07-07,Unknown,,,2026-09-12,,,,,,1.0,139
+https://www.realestate.com.au/sold/property-house-nsw-liverpool-151930956,41 Tully Avenue,Liverpool,2170,House,6.0,2,2.0,588.1,,,1150000,2026-09-11,Private treaty,,,2026-09-12,,,,,,0.3333333333333333,205
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-152048988,501/311 Hume Highway,Liverpool,2170,Unit,2.0,2,1.0,,,,600000,2026-09-11,Private treaty,,,2026-09-12,,,,,,1.0,205
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-152087256,505/17 Shepherd Street,Liverpool,2170,Unit,2.0,2,1.0,,131.0,,570000,2026-09-11,Private treaty,,,2026-09-12,,,,,,1.0,205
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151680820,202/21 Atkinson Street,Liverpool,2170,Apartment,2.0,2,1.0,,106.0,,530000,2026-09-11,Unknown,,,2026-09-12,,,,,,1.0,205
+https://www.realestate.com.au/sold/property-townhouse-nsw-liverpool-151601540,3/1 Stanton Street,Liverpool,2170,Townhouse,3.0,1,1.0,178.0,,,770000,2026-09-03,Private treaty,,,2026-09-12,,,,,,0.3333333333333333,197
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151934628,308/6B Atkinson Street,Liverpool,2170,Apartment,1.0,1,1.0,,84.0,,412000,2026-08-31,Unknown,,,2026-09-12,,,,,,1.0,194
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151703084,42/87-91 Campbell Street,Liverpool,2170,Apartment,1.0,1,1.0,,,,410000,2026-08-28,Unknown,,,2026-09-12,,,,,,1.0,191
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151946852,9/53 Goulburn Street,Liverpool,2170,Unit,2.0,1,1.0,,,,423000,2026-08-27,Private treaty,,,2026-09-12,,,,,,0.5,190
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-150811780,503/311 Hume Highway,Liverpool,2170,Apartment,2.0,2,1.0,,,,570000,2026-08-25,Private treaty,,,2026-09-12,,,,,,1.0,188
+https://www.realestate.com.au/sold/property-townhouse-nsw-liverpool-151890288,4/44-46 Passefield Street,Liverpool,2170,Townhouse,3.0,2,1.0,233.0,,,875000,2026-08-24,Private treaty,,,2026-09-12,,,,,,0.6666666666666666,187
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151359976,8/9-11 Bathurst Street,Liverpool,2170,Unit,3.0,1,2.0,,,,660000,2026-08-24,Unknown,,,2026-09-12,,,,,,0.3333333333333333,187
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-148855372,1303/30 Shepherd Street,Liverpool,2170,Apartment,2.0,2,1.0,,106.0,,539000,2026-08-24,Private treaty,,,2026-09-12,,,,,,1.0,187
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151685284,2/30 Speed Street,Liverpool,2170,Apartment,2.0,1,1.0,,,,385000,2026-08-24,Private treaty,,,2026-09-12,,,,,,0.5,187
+https://www.realestate.com.au/sold/property-house-nsw-liverpool-151905060,8 Angelo Avenue,Liverpool,2170,House,3.0,1,1.0,171.0,,,935000,2026-08-22,Auction,,,2026-09-12,,,,,,0.3333333333333333,185
+https://www.realestate.com.au/sold/property-house-nsw-liverpool-151716252,5/10 Christie Street,Liverpool,2170,House,3.0,2,1.0,,,,870000,2026-08-22,Private treaty,,,2026-09-12,,,,,,0.6666666666666666,185
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151885248,10/50 Castlereagh Street,Liverpool,2170,Unit,2.0,1,1.0,,,,433000,2026-08-21,Private treaty,,,2026-09-12,,,,,,0.5,184
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151685564,66/387 Macquarie Street,Liverpool,2170,Unit,2.0,2,1.0,,,,570000,2026-08-19,Private treaty,,,2026-09-12,,,,,,1.0,182
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151256120,40/387 Macquarie Street,Liverpool,2170,Apartment,1.0,1,1.0,,,,431000,2026-08-19,Private treaty,,,2026-09-12,,,,,,1.0,182
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-150616840,B601/17 Shepherd Street,Liverpool,2170,Apartment,2.0,2,1.0,,112.0,,555000,2026-08-13,Unknown,,,2026-09-12,,,,,,1.0,176
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151780552,401/21 Charles Street,Liverpool,2170,Apartment,2.0,2,1.0,,,,550000,2026-08-13,Private treaty,,,2026-09-12,,,,,,1.0,176
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151540992,20/8 Beale Street,Liverpool,2170,Apartment,2.0,1,1.0,,102.0,,450000,2026-08-13,Private treaty,,,2026-09-12,,,,,,0.5,176
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151789880,805/311 Hume Highway,Liverpool,2170,Unit,2.0,2,1.0,,,,610000,2026-08-12,Private treaty,,,2026-09-12,,,,,,1.0,175
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151096340,2508/311 Hume Highway,Liverpool,2170,Apartment,2.0,2,1.0,,,,625000,2026-08-11,Private treaty,,,2026-09-12,,,,,,1.0,174
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151756184,1/58-60 Copeland Street,Liverpool,2170,Apartment,2.0,1,1.0,,,,412000,2026-08-11,Unknown,,,2026-09-12,,,,,,0.5,174
+https://www.realestate.com.au/sold/property-townhouse-nsw-liverpool-151751392,1/10 Tobruk Avenue,Liverpool,2170,Townhouse,4.0,3,1.0,241.0,,,962000,2026-08-10,Auction,,,2026-09-12,,,,,,0.75,173
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151786164,91/1 Riverpark Drive,Liverpool,2170,Apartment,2.0,1,2.0,,112.0,,515000,2026-08-10,Private treaty,,,2026-09-12,,,,,,0.5,173
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151340168,1610/32 Shepherd Street,Liverpool,2170,Unit,1.0,1,1.0,,76.0,,480000,2026-08-10,Unknown,,,2026-09-12,,,,,,1.0,173
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151722612,8/22 Nagle Street,Liverpool,2170,Apartment,2.0,1,1.0,,77.0,,420000,2026-08-10,Private treaty,,,2026-09-12,,,,,,0.5,173
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151470836,32/17-19 Speed Street,Liverpool,2170,Apartment,2.0,1,1.0,,79.0,,385000,2026-08-10,Private treaty,,,2026-09-12,,,,,,0.5,173
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151860000,5/66 Speed Street,Liverpool,2170,Unit,2.0,1,1.0,,,,350000,2026-08-10,Unknown,,,2026-09-12,,,,,,0.5,173
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151603028,Unit 5/33-35 Bathurst Street,Liverpool,2170,Unit,3.0,2,1.0,,,,730000,2026-08-07,Private treaty,,,2026-09-12,,,,,,0.6666666666666666,170
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151478152,G02/15 Bigge Street,Liverpool,2170,Apartment,2.0,2,1.0,,,,560000,2026-08-06,Private treaty,,,2026-09-12,,,,,,1.0,169
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-150504584,3/62 Castlereagh Street,Liverpool,2170,Apartment,2.0,1,1.0,,,,505000,2026-08-06,Unknown,,,2026-09-12,,,,,,0.5,169
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151887428,4/26 Speed Street,Liverpool,2170,Unit,2.0,1,1.0,,68.0,,410000,2026-08-06,Unknown,,,2026-09-12,,,,,,0.5,169
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151000164,15/52 Speed Street,Liverpool,2170,Apartment,2.0,1,1.0,,74.0,,380000,2026-08-06,Private treaty,,,2026-09-12,,,,,,0.5,169
+https://www.realestate.com.au/sold/property-house-nsw-liverpool-151515988,45 Birkdale Crescent,Liverpool,2170,House,3.0,1,1.0,557.4,,,960000,2026-08-03,Unknown,,,2026-09-12,,,,,,0.3333333333333333,166
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151180392,12/119-121 Castlereagh Street,Liverpool,2170,Apartment,2.0,1,1.0,,93.0,,460000,2026-07-31,Private treaty,,,2026-09-12,,,,,,0.5,163
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-150894224,15/13 Speed Street,Liverpool,2170,Unit,2.0,1,1.0,,,,415000,2026-07-31,Private treaty,,,2026-09-12,,,,,,0.5,163
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151703048,11/26 Goulburn Street,Liverpool,2170,Apartment,1.0,1,1.0,,,,340000,2026-07-31,Unknown,,,2026-09-12,,,,,,1.0,163
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151171564,20/22 Speed Street,Liverpool,2170,Apartment,1.0,1,1.0,,65.0,,300000,2026-07-31,Private treaty,,,2026-09-12,,,,,,1.0,163
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151822288,31/32 Castlereagh Street,Liverpool,2170,Apartment,1.0,1,1.0,,,,425000,2026-07-29,Private treaty,,,2026-09-12,,,,,,1.0,161
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151238316,26/42 Copeland Street,Liverpool,2170,Apartment,2.0,1,1.0,,,,375000,2026-07-29,Private treaty,,,2026-09-12,,,,,,0.5,161
+https://www.realestate.com.au/sold/property-house-nsw-liverpool-151712048,9 Anastasio Road,Liverpool,2170,House,3.0,1,2.0,450.0,,,976000,2026-07-25,Auction,,,2026-09-12,,,,,,0.3333333333333333,157
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-150604984,12/8-10 Lachlan Street,Liverpool,2170,Unit,2.0,2,1.0,,114.0,,560000,2026-07-24,Private treaty,,,2026-09-12,,,,,,1.0,156
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151168028,504/21 Atkinson Street,Liverpool,2170,Unit,2.0,2,1.0,,,,550000,2026-07-24,Private treaty,,,2026-09-12,,,,,,1.0,156
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-134720182,48/93-95 Campbell Street,Liverpool,2170,Apartment,2.0,2,1.0,,,,515000,2026-07-22,Unknown,,,2026-09-12,,,,,,1.0,154
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151320836,57/10-16 Castlereagh Street,Liverpool,2170,Unit,3.0,2,2.0,,,,680000,2026-07-21,Unknown,,,2026-09-12,,,,,,0.6666666666666666,153
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-150812360,7/74-76 Castlereagh Street,Liverpool,2170,Unit,2.0,2,2.0,,,,550000,2026-07-21,Unknown,,,2026-09-12,,,,,,1.0,153
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151643700,13/58 Copeland Street,Liverpool,2170,Unit,2.0,1,1.0,,,,407000,2026-07-21,Unknown,,,2026-09-12,,,,,,0.5,153
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151266728,28/42-44 Copeland Street,Liverpool,2170,Unit,2.0,1,1.0,,,,380000,2026-07-21,Unknown,,,2026-09-12,,,,,,0.5,153
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151490256,24/81 Memorial Avenue,Liverpool,2170,Unit,1.0,1,1.0,,,,360000,2026-07-21,Unknown,,,2026-09-12,,,,,,1.0,153
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151703032,19/2 Beale Street,Liverpool,2170,Unit,1.0,1,1.0,,,,350000,2026-07-20,Unknown,,,2026-09-12,,,,,,1.0,152
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-150387988,41/7-9 Atkinson Street,Liverpool,2170,Apartment,2.0,1,1.0,,,,460000,2026-07-18,Unknown,,,2026-09-12,,,,,,0.5,150
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151576456,12/32 Nagle Street,Liverpool,2170,Unit,2.0,1,1.0,,,,415000,2026-07-17,Unknown,,,2026-09-12,,,,,,0.5,149
+https://www.realestate.com.au/sold/property-townhouse-nsw-liverpool-151517440,5/2 Calabro Avenue,Liverpool,2170,Townhouse,2.0,1,1.0,,,,757000,2026-07-16,Private treaty,,,2026-09-12,,,,,,0.5,148
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151720856,4/12 George Street,Liverpool,2170,Apartment,2.0,2,1.0,,,,590000,2026-07-16,Unknown,,,2026-09-12,,,,,,1.0,148
+https://www.realestate.com.au/sold/property-house-nsw-liverpool-150792248,19 Pearce Street,Liverpool,2170,House,4.0,1,3.0,652.0,,,1270000,2026-07-14,Unknown,,,2026-09-12,,,,,,0.25,146
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151350072,"Unit 203, 311 Hume Highway",Liverpool,2170,Unit,2.0,2,1.0,,,,600000,2026-07-14,Unknown,,,2026-09-12,,,,,,1.0,146
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151645348,3006/420 Macquarie Street,Liverpool,2170,Unit,2.0,2,1.0,,,,615000,2026-07-13,Unknown,,,2026-09-12,,,,,,1.0,145
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-150843652,55/26 George Street,Liverpool,2170,Apartment,2.0,1,1.0,,104.0,,545000,2026-07-10,Private treaty,,,2026-09-12,,,,,,0.5,142
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151269204,10/4-6 Castlereagh Street,Liverpool,2170,Unit,2.0,2,1.0,,,,525000,2026-07-09,Private treaty,,,2026-09-12,,,,,,1.0,141
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151550716,14/17-19 Speed Street,Liverpool,2170,Apartment,2.0,1,1.0,,80.1,,393000,2026-07-09,Unknown,,,2026-09-12,,,,,,0.5,141
+https://www.realestate.com.au/sold/property-house-nsw-liverpool-151152668,30 Danalam Street,Liverpool,2170,House,4.0,1,1.0,727.0,,,1083000,2026-07-08,Unknown,,,2026-09-12,,,,,,0.25,140
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-151505652,10/84 Campbell Street,Liverpool,2170,Unit,2.0,1,1.0,,,,538000,2026-07-08,Unknown,,,2026-09-12,,,,,,0.5,140
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-150812008,20/132 Moore Street,Liverpool,2170,Unit,2.0,1,2.0,,,,510000,2026-07-02,Unknown,,,2026-09-12,,,,,,0.5,134
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151358920,411/32 Shepherd Street,Liverpool,2170,Apartment,2.0,1,1.0,,79.0,,485000,2026-06-30,Unknown,,,2026-09-12,,,,,,0.5,132
+https://www.realestate.com.au/sold/property-unit-nsw-liverpool-150510604,69/24 Lachlan Street,Liverpool,2170,Unit,2.0,2,1.0,,126.0,,555000,2026-06-24,Unknown,,,2026-09-12,,,,,,1.0,126
+https://www.realestate.com.au/sold/property-apartment-nsw-liverpool-151232124,2/15-17 Castlereagh Street,Liverpool,2170,Apartment,2.0,2,1.0,,,,530000,2026-06-24,Unknown,,,2026-09-12,,,,,,1.0,126
+https://www.realestate.com.au/sold/property-townhouse-nsw-liverpool-151379288,14/2 Calabro Avenue,Liverpool,2170,Townhouse,2.0,1,1.0,,,,779000,2026-06-22,Unknown,,,2026-09-12,,,,,,0.5,124
+https://www.domain.com.au/6-139-153-middle-head-road-mosman-nsw-2088-2021035788,6/139-153 Middle Head Road,Mosman,2088,Apartment,3.0,2,2.0,,,,2558000,2026-08-13,Private treaty,,,2026-09-12,,,,,,0.6666666666666666,176
+https://www.domain.com.au/6-40-raglan-street-mosman-nsw-2088-2020977668,6/40 Raglan Street,Mosman,2088,Apartment,2.0,1,1.0,,103.0,,1600000,2026-07-27,Private treaty,,,2026-09-12,,,,,,0.5,159
+https://www.domain.com.au/10-16-avenue-road-mosman-nsw-2088-2020659268,10/16 Avenue Road,Mosman,2088,Apartment,2.0,1,,,80.0,,892000,2026-07-20,Private treaty,,,2026-09-12,,,,,,0.5,152
+https://www.domain.com.au/1-128-130-avenue-road-mosman-nsw-2088-2020877773,1/128-130 Avenue Road,Mosman,2088,Apartment,2.0,1,1.0,,,,1415000,2026-07-14,Auction,,,2026-09-12,,,,,,0.5,146
+https://www.domain.com.au/1404-1-3-valentine-avenue-parramatta-nsw-2150-2021149469,1404/1-3 Valentine Avenue,Parramatta,2150,Apartment,1.0,1,,,,,320000,2026-09-11,Private treaty,,,2026-09-12,,,,,,1.0,205
+https://www.domain.com.au/108-125-129-arthur-street-parramatta-nsw-2150-2021092190,108/125-129 Arthur Street,Parramatta,2150,Apartment,2.0,1,1.0,,,,653000,2026-08-21,Private treaty,,,2026-09-12,,,,,,0.5,184
+https://www.domain.com.au/138-railway-st-parramatta-nsw-2150-2021075447,138 Railway St,Parramatta,2150,Townhouse,2.0,1,1.0,,,,685000,2026-08-14,Private treaty,,,2026-09-12,,,,,,0.5,177
+https://www.domain.com.au/6-16-18-mainsbridge-avenue-liverpool-nsw-2170-2021087249,6/16-18 Mainsbridge Avenue,Liverpool,2170,Townhouse,2.0,2,1.0,,,,720000,2026-08-29,Private treaty,,,2026-09-12,,,,,,1.0,192
+https://www.domain.com.au/35-12-20-lachlan-street-liverpool-nsw-2170-2021064575,35/12-20 Lachlan Street,Liverpool,2170,Apartment,3.0,2,2.0,,157.0,,730000,2026-08-28,Private treaty,,,2026-09-12,,,,,,0.6666666666666666,191
+https://www.domain.com.au/1-34-goulburn-street-liverpool-nsw-2170-2020889734,1/34 Goulburn Street,Liverpool,2170,Apartment,2.0,1,1.0,,,,390000,2026-08-20,Private treaty,,,2026-09-12,,,,,,0.5,183
+https://www.domain.com.au/1-13-15-flowerdale-road-liverpool-nsw-2170-2021057642,1/13-15 Flowerdale Road,Liverpool,2170,Townhouse,3.0,2,1.0,,,,990000,2026-08-06,Private treaty,,,2026-09-12,,,,,,0.6666666666666666,169
+https://www.domain.com.au/2-16-18-mainsbridge-avenue-liverpool-nsw-2170-2020970669,2/16-18 Mainsbridge Avenue,Liverpool,2170,Townhouse,2.0,2,1.0,,,,725000,2026-08-06,Private treaty,,,2026-09-12,,,,,,1.0,169
+https://www.domain.com.au/4-81-memorial-avenue-liverpool-nsw-2170-2021080163,4/81 Memorial Avenue,Liverpool,2170,Apartment,2.0,1,1.0,,,,435000,2026-07-29,Private treaty,,,2026-09-12,,,,,,0.5,161
+https://www.domain.com.au/6-8-collimore-avenue-liverpool-nsw-2170-2020945066,6/8 Collimore Avenue,Liverpool,2170,Apartment,2.0,1,1.0,,82.0,,390000,2026-07-24,Private treaty,,,2026-09-12,,,,,,0.5,156
+https://www.domain.com.au/401-30-castlereagh-street-liverpool-nsw-2170-2020730003,401/30 Castlereagh Street,Liverpool,2170,Apartment,2.0,2,1.0,,,,615000,2026-07-21,Private treaty,,,2026-09-12,,,,,,1.0,153
+https://www.domain.com.au/5-64-copeland-street-liverpool-nsw-2170-2021075036,5/64 Copeland Street,Liverpool,2170,Apartment,2.0,1,1.0,,,,390000,2026-07-21,Private treaty,,,2026-09-12,,,,,,0.5,153
+https://www.domain.com.au/22-33-39-lachlan-street-liverpool-nsw-2170-2020611728,22/33-39 Lachlan Street,Liverpool,2170,Apartment,2.0,1,1.0,,,,500000,2026-07-14,Private treaty,,,2026-09-12,,,,,,0.5,146
+https://www.domain.com.au/20-apex-street-liverpool-nsw-2170-2020935632,20 Apex Street,Liverpool,2170,House,3.0,1,1.0,853.0,,,1300000,2026-07-13,Private treaty,,,2026-09-12,,,,,,0.3333333333333333,145

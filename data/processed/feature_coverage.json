@@ -1,0 +1,40 @@
+{
+  "min_coverage": 0.4,
+  "coverage": {
+    "bedrooms": 1.0,
+    "bathrooms": 1.0,
+    "parking_spaces": 0.8947,
+    "land_size_sqm": 0.0833,
+    "floor_area_sqm": 0.3026,
+    "bath_per_bed": 1.0,
+    "description_length": 0.0,
+    "mentions_pool": 0.0,
+    "mentions_view": 0.0,
+    "mentions_renovation": 0.0,
+    "property_age": 0.0
+  },
+  "structural_features": [
+    "bedrooms",
+    "bathrooms",
+    "parking_spaces",
+    "land_size_sqm",
+    "floor_area_sqm",
+    "bath_per_bed"
+  ],
+  "enrichment_features": [
+    "description_length",
+    "mentions_pool",
+    "mentions_view",
+    "mentions_renovation",
+    "property_age"
+  ],
+  "usable_numeric_features": [
+    "bedrooms",
+    "bathrooms",
+    "parking_spaces",
+    "land_size_sqm",
+    "floor_area_sqm",
+    "bath_per_bed"
+  ],
+  "rows": 228
+}

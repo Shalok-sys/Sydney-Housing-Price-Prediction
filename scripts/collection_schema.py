@@ -113,6 +113,22 @@ COLUMNS = [
         "note": "Land size in square metres. Usually blank for apartments.",
     },
     {
+        "name": "floor_area_sqm",
+        "type": "number",
+        "required": False,
+        "min": 10,
+        "max": 2000,
+        "note": "Internal floor area in square metres. Only on individual listing pages.",
+    },
+    {
+        "name": "year_built",
+        "type": "integer",
+        "required": False,
+        "min": 1800,
+        "max": 2030,
+        "note": "Year the property was built, when the listing states it.",
+    },
+    {
         "name": "sale_price",
         "type": "number",
         "required": True,

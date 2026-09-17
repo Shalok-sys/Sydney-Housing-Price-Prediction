@@ -339,10 +339,36 @@ modest, and deliberately so.
 * `bath_per_bed`, bathrooms divided by bedrooms, a rough signal of
   fitout quality that is independent of raw size.
 
-Several features from an earlier version of this project could not be
-built, because the collected listings carry no description text, no
-build year and no feature tags. Whether a property has a pool, has been
-renovated, mentions a view, or how old it is, are all unavailable.""")
+Several further features are defined in `scripts/prepare_features.py`
+but depend on detail that only appears on an individual listing page,
+namely the description, the feature tags, the internal floor area and
+the build year. Those are whether a property mentions a pool, a view or
+a renovation, how long the description is, and the property's age.
+
+### How the notebook decides which features to model
+
+Collecting that detail means opening each property's own page, so it
+arrives gradually rather than all at once. The feature list is therefore
+not fixed in this notebook. `prepare_features.py` computes every
+derivable feature, measures how much of the dataset each one covers, and
+writes that to `data/processed/feature_coverage.json`. The cell below
+reads it and models whatever is complete enough, so collecting more
+detail changes the model without editing any code.
+
+Two rules apply, because a blank does not always mean the same thing.
+
+* **Structural features** are always modelled. A flat has no land and a
+  house reports no strata floor area, so a low fill rate for
+  `land_size_sqm` or `floor_area_sqm` describes the housing stock rather
+  than missing work. The blank itself is informative, and a tree model
+  can use it.
+* **Enrichment features** are modelled only once they cover at least 40
+  percent of rows. Here a blank really does mean not yet collected, and
+  imputing a mostly empty column would be inventing a feature rather
+  than measuring one.
+
+The output of the next cell states exactly which features were active
+for the results that follow.""")
 
 code("""\
 df["bath_per_bed"] = (df["bathrooms"] / df["bedrooms"]).replace([np.inf, -np.inf], np.nan)
@@ -386,11 +412,29 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.metrics import mean_absolute_error, r2_score
 
-numeric_features = [
-    "bedrooms", "bathrooms", "parking_spaces",
-    "land_size_sqm", "floor_area_sqm", "bath_per_bed",
-]
+import json
+
+# The feature list is not written here by hand. prepare_features.py
+# reports how complete each feature is, and the notebook models the ones
+# that are complete enough, so collecting more detail changes what is
+# modelled without any edit to this notebook.
+with open("../data/processed/feature_coverage.json") as f:
+    coverage_report = json.load(f)
+
+numeric_features = coverage_report["usable_numeric_features"]
 categorical_features = ["suburb", "property_type", "sale_method"]
+
+print("Modelling with", len(numeric_features), "numeric features")
+for name in numeric_features:
+    print(f"  {name:<22} {coverage_report['coverage'][name]:6.1%} of rows")
+
+skipped = [n for n in coverage_report["enrichment_features"]
+           if n not in numeric_features]
+if skipped:
+    print()
+    print(f"Not modelled, below the {coverage_report['min_coverage']:.0%} coverage rule")
+    for name in skipped:
+        print(f"  {name:<22} {coverage_report['coverage'][name]:6.1%} of rows")
 
 X = df[numeric_features + categorical_features]
 y = df["sale_price"]
