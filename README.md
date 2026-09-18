@@ -44,14 +44,6 @@ month window, so the model is strong on strata and weak on houses.
 Parramatta returned no house sales at all, and the app says so rather
 than quietly guessing.
 
-## Acknowledgement of GenAI use
-
-AI assistance was used to plan this project, to write and review the
-collection tooling, notebook, model code and Flask app, and to improve
-the quality of the written text and the code. Every number and result
-quoted in the notebook comes from actually running the code, nothing was
-written in first and made up.
-
 ## Setup
 
 1. Create and activate a virtual environment, optional but recommended.
