@@ -26,11 +26,12 @@ the five parts of the task: problem definition and data collection, data
 understanding and feature engineering, model development and evaluation,
 investigating prediction failures, and final deployment.
 
-Acknowledgement of GenAI use. AI assistance was used to plan this
-project, to write and review the code and analysis, and to improve the
-quality of the written text and the code. Every number and conclusion
-below comes from running the code in this notebook on the collected
-data.""")
+Acknowledgement of GenAI use. AI assistance was used to plan, write and
+review code across the notebook, the collection tooling and the web
+application, and to improve the quality of the written text and code.
+Every number, table and figure comes from executing that code on the
+collected data; none were estimated. The analytical decisions are
+explained below.""")
 
 # Part 1
 md("""\
