@@ -2,7 +2,7 @@
 
 This project needs at least 100 sold properties, with at least 30 from
 each of the three suburbs. The data is collected by hand from public
-sold listings, which is what the task sheet asks for. The Claude browser
+sold listings, which is what the task sheet asks for. An AI browser
 extension is used to help read each page and write the row, so the
 typing is faster, but you are still the one browsing the sites in a
 normal browser session at normal speed.
@@ -60,7 +60,7 @@ Try to collect a mix of property types rather than only houses, because
 the model needs to see units and townhouses to learn anything about
 them.
 
-## The prompt for the Claude browser extension
+## The prompt for the browser extension
 
 Open a suburb's sold listings page, then give the extension this. It
 reads the listings that are on screen and returns rows you can paste

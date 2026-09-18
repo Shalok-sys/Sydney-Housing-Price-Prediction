@@ -22,7 +22,7 @@ requirements.txt     python packages needed to run everything
 ## The dataset
 
 231 real sold listings collected by hand from realestate.com.au and
-domain.com.au, the two sites named in the task sheet, using the Claude
+domain.com.au, the two sites named in the task sheet, using an AI
 browser extension to read each results page and transcribe the visible
 fields. No crawler was run against either site. Both prohibit automated
 scraping in their terms of use, and the task sheet asks for the dataset
@@ -46,10 +46,11 @@ than quietly guessing.
 
 ## Acknowledgement of GenAI use
 
-Claude, an AI coding assistant, was used to help plan this project and
-write the collection tooling, notebook, model code and Flask app.
-Every number and result quoted in the notebook comes from actually
-running the code, nothing was written in first and made up. Review,
+AI assistance was used to plan this project, to write and review the
+collection tooling, notebook, model code and Flask app, and to improve
+the quality of the written text and the code. Every number and result
+quoted in the notebook comes from actually running the code, nothing was
+written in first and made up. Review,
 understand and where useful extend this work in your own words before
 submitting, and repeat this acknowledgement in the written report as
 required by the task instructions.
@@ -102,18 +103,19 @@ details, and press Estimate price. The result panel shows the estimated
 sale price together with a likely range. That range is not a guess, it
 comes from how far the model is typically off in that suburb, measured
 by cross validation, so the estimate is never presented as a single
-exact figure. The agent description box is optional, the model uses its
-length and whether it mentions a view.
+exact figure.
 
-Two details worth knowing. Choosing Unit switches the land size input
-off, because units have no land of their own and the model was trained
-that way. Values submitted from the form are validated on the server,
-so out of range or missing entries return a clear message rather than a
-broken estimate.
+Three details worth knowing. Choosing a house or townhouse switches the
+area field from floor area to land size, since the two are recorded and
+modelled separately. Values submitted from the form are validated on the
+server, so out of range or missing entries return a clear message rather
+than a broken estimate. And where a suburb and property type combination
+has few or no sales behind it, Parramatta houses being the clearest case,
+the app says so instead of returning a confident figure.
 
 Screenshots are in `app/screenshots/`, covering the empty form, a
-completed estimate, the same estimate in dark mode, and the mobile
-layout.
+completed estimate, the low confidence warning, dark mode, and the
+mobile layout.
 
 ## Reproducing results
 

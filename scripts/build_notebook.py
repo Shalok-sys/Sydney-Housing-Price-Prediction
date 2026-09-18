@@ -26,10 +26,11 @@ the five parts of the task: problem definition and data collection, data
 understanding and feature engineering, model development and evaluation,
 investigating prediction failures, and final deployment.
 
-Acknowledgement of GenAI use. Claude, an AI coding assistant, was used
-to help plan this project and write the code and analysis. Every number
-and conclusion below comes from running the code in this notebook on the
-collected data. The work should be reviewed and understood before
+Acknowledgement of GenAI use. AI assistance was used to plan this
+project, to write and review the code and analysis, and to improve the
+quality of the written text and the code. Every number and conclusion
+below comes from running the code in this notebook on the collected
+data. The work should be reviewed and understood before
 submission, and this acknowledgement repeated in the written report.""")
 
 # Part 1
@@ -57,8 +58,8 @@ different markets, which is what the task asks for.
 
 ### How the data was collected
 The listings were collected by hand from the sold sections of
-realestate.com.au and domain.com.au, using the Claude browser extension
-to read each results page and transcribe the visible fields into rows.
+realestate.com.au and domain.com.au, using an AI browser extension to
+read each results page and transcribe the visible fields into rows.
 Both sites named in the task sheet were used. No crawler was run against
 either site, since both prohibit automated scraping in their terms of
 use, and the task sheet asks for the dataset to be constructed manually.
