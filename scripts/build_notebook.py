@@ -30,8 +30,7 @@ Acknowledgement of GenAI use. AI assistance was used to plan this
 project, to write and review the code and analysis, and to improve the
 quality of the written text and the code. Every number and conclusion
 below comes from running the code in this notebook on the collected
-data. The work should be reviewed and understood before
-submission, and this acknowledgement repeated in the written report.""")
+data.""")
 
 # Part 1
 md("""\

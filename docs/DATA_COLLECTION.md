@@ -163,13 +163,23 @@ of them. Coverage of 40 percent is the point at which a feature starts
 being modelled, so roughly 90 of the 231 listings is the target worth
 aiming at.
 
-## When the file passes
+## After collecting more
 
-Tell me and I will run the modelling pipeline against the real data,
-which means regenerating the feature engineering, the three models, the
-cross validation, the error analysis and the saved model behind the web
-app. Several things in the current notebook are written around the old
-dataset and will be rewritten to match whatever the real data shows.
+Rebuild the pipeline so the analysis reflects the enlarged dataset. This
+regenerates the features, retrains the three models, recomputes the
+cross validation and error analysis, and saves the model the web app
+loads.
+
+```
+python3 scripts/prepare_features.py
+python3 scripts/build_notebook.py
+jupyter nbconvert --to notebook --execute --inplace \
+        notebooks/sydney_housing_price_prediction.ipynb
+```
+
+Figures quoted in the report come from the notebook's own predictions,
+so rerun `scripts/build_report_figures.py` afterwards to keep the two
+consistent.
 
 ## What gets derived later, and why
 

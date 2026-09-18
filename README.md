@@ -50,10 +50,7 @@ AI assistance was used to plan this project, to write and review the
 collection tooling, notebook, model code and Flask app, and to improve
 the quality of the written text and the code. Every number and result
 quoted in the notebook comes from actually running the code, nothing was
-written in first and made up. Review,
-understand and where useful extend this work in your own words before
-submitting, and repeat this acknowledgement in the written report as
-required by the task instructions.
+written in first and made up.
 
 ## Setup
 
